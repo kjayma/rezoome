@@ -10,8 +10,16 @@ var app = new EmberApp({
   vendorFiles: {
     'handlebars.js': null
   },
+  lessOptions: {
+    paths: [
+      'bower_components/bootstrap/less'
+    ]
+  },
   name: require('./package.json').name,
-
+  sourcemaps: {
+    enabled: true,
+    extensions: ['js']
+  },
   getEnvJSON: require('./config/environment')
 });
 // Use `app.import` to add additional libraries to the generated

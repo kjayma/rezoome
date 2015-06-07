@@ -1,7 +1,22 @@
 nav.navbar.navbar-inverse.navbar-fixed-top
   .container
     .navbar-header
-      a.navbar-brand href="#"
+      button.navbar-toggle.collapsed data-toggle="collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.rezoome_header href="#"
         |Rezoome
+    .navbar.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a href="#"
+            |Jobs
+        li
+          a href="#"
+            |Candidates
 
-== outlet
+.container
+  .rezoome
+    |this worked
+    == outlet
