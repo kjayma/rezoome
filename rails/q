@@ -1,0 +1,40 @@
+=> [32m#<Mongoid::Contextual::Mongo:0x000000047e7710[0m
+ [34m@cache[0m[32m=[0m[36mnil[0m,
+ [34m@cache_loaded[0m[32m=[0m[36mtrue[0m,
+ [34m@collection[0m[32m=[0m
+  [32m#<Moped::Collection:0x000000047e5dc0[0m
+   [34m@database[0m[32m=[0m
+    [32m#<Moped::Database:0x000000047e5e10[0m
+     [34m@name[0m[32m=[0m[32m[32m"[0m[32m[32mrezoome_development[0m[32m[32m"[0m[32m[0m,
+     [34m@session[0m[32m=[0m<[34mMoped[0m::[34mSession[0m seeds=[<[34mMoped[0m::[34mNode[0m resolved_address=[32m[32m"[0m[32m[32m127.0.0.1:27017[0m[32m[32m"[0m[32m[0m>] database=rezoome_development>[32m>[0m,
+   [34m@name[0m[32m=[0m[32m[32m"[0m[32m[32mresumes[0m[32m[32m"[0m[32m[0m[32m>[0m,
+ [34m@criteria[0m[32m=[0m[32m#<Mongoid::Criteria
+  selector: {}
+  options:  {}
+  class:    Resume
+  embedded: false>
+[0m,
+ [34m@klass[0m[32m=[0m[34mResume[0m,
+ [34m@query[0m[32m=[0m
+  [32m#<Moped::Query:0x000000047e5c58[0m
+   [34m@collection[0m[32m=[0m
+    [32m#<Moped::Collection:0x000000047e5dc0[0m
+     [34m@database[0m[32m=[0m
+      [32m#<Moped::Database:0x000000047e5e10[0m
+       [34m@name[0m[32m=[0m[32m[32m"[0m[32m[32mrezoome_development[0m[32m[32m"[0m[32m[0m,
+       [34m@session[0m[32m=[0m
+        <[34mMoped[0m::[34mSession[0m seeds=[<[34mMoped[0m::[34mNode[0m resolved_address=[32m[32m"[0m[32m[32m127.0.0.1:27017[0m[32m[32m"[0m[32m[0m>] database=rezoome_development>[32m>[0m,
+     [34m@name[0m[32m=[0m[32m[32m"[0m[32m[32mresumes[0m[32m[32m"[0m[32m[0m[32m>[0m,
+   [34m@operation[0m[32m=[0m
+    [32m#<Moped::Protocol::Query
+  @length=0
+  @request_id=0
+  @response_to=0
+  @op_code=2004
+  @flags=[]
+  @full_collection_name="rezoome_development.resumes"
+  @skip=0
+  @limit=0
+  @selector={}
+  @fields=nil>[0m,
+   [34m@selector[0m[32m=[0m{}[32m>[0m[32m>[0m

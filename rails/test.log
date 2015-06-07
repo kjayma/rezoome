@@ -1,0 +1,401 @@
+# Logfile created on 2015-06-06 22:12:33 -0400 by logger.rb/44203
+I, [2015-06-06T22:12:33.754208 #24226]  INFO -- : 2
+I, [2015-06-06T22:12:33.754351 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:34.398338 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:12:34.399600 #24226]  INFO -- : processed 2 files
+I, [2015-06-06T22:12:34.444646 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:34.444785 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:34.983650 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:35.056888 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:35.056998 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:35.636642 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:35.706800 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:35.707207 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:36.331471 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:36.388940 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:36.389302 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:36.962493 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:37.036761 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:37.039032 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:37.620267 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:37.689210 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:37.689562 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:38.251948 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:38.310478 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:38.310880 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:38.866704 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:38.942030 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:38.942390 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:39.515328 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:39.544632 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:39.544765 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:40.080163 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:40.145772 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:40.146417 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:40.713860 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:40.782446 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:40.782567 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:41.372609 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:41.445050 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:41.445455 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:41.999901 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:42.075482 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:42.075608 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:42.913964 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:42.973126 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:42.973261 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:44.140248 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:44.202085 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:44.202429 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:45.206959 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:45.280960 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:45.281149 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:46.048866 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:46.092549 #24226]  INFO -- : 1
+I, [2015-06-06T22:12:46.092967 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:46.662389 #24226]  INFO -- : processed 1 files
+I, [2015-06-06T22:12:46.749400 #24226]  INFO -- : 2
+I, [2015-06-06T22:12:46.749777 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:12:47.315190 #24226]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:12:47.941686 #24226]  INFO -- : processed 2 files
+I, [2015-06-06T22:14:20.280639 #24677]  INFO -- : 2
+I, [2015-06-06T22:14:20.280789 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:20.940610 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:14:20.941952 #24677]  INFO -- : processed 2 files
+I, [2015-06-06T22:14:20.988413 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:20.988773 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:21.549044 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:21.580574 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:21.580753 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:22.121416 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:22.204791 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:22.204997 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:22.839840 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:22.908170 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:22.908296 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:23.475184 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:23.532300 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:23.532671 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:24.102681 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:24.173362 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:24.173725 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:24.755793 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:24.809838 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:24.810250 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:25.392935 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:25.447738 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:25.448087 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:26.003734 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:26.077238 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:26.077790 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:26.619600 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:26.693059 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:26.693241 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:27.237070 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:27.302844 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:27.302952 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:27.937751 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:27.996693 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:27.996824 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:28.565327 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:28.616947 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:28.617189 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:29.627384 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:29.695717 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:29.696097 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:30.766029 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:30.817016 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:30.817153 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:32.210286 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:32.264587 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:32.265040 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:33.172282 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:33.242930 #24677]  INFO -- : 1
+I, [2015-06-06T22:14:33.243100 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:33.809284 #24677]  INFO -- : processed 1 files
+I, [2015-06-06T22:14:33.899168 #24677]  INFO -- : 2
+I, [2015-06-06T22:14:33.899555 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:14:34.454071 #24677]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:14:35.069537 #24677]  INFO -- : processed 2 files
+I, [2015-06-06T22:15:02.010750 #25106]  INFO -- : 2
+I, [2015-06-06T22:15:02.011223 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:02.642917 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:15:02.644161 #25106]  INFO -- : processed 2 files
+I, [2015-06-06T22:15:02.693791 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:02.694067 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:03.245504 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:03.309560 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:03.309951 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:03.893214 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:03.953612 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:03.953976 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:04.566541 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:04.620019 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:04.620225 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:05.173460 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:05.227932 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:05.228282 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:05.809810 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:05.872580 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:05.872936 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:06.460139 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:06.490138 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:06.490265 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:07.084354 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:07.157909 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:07.158298 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:07.726502 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:07.795208 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:07.795340 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:08.353136 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:08.413519 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:08.413654 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:08.991801 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:09.055894 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:09.056277 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:09.675618 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:09.734906 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:09.735261 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:10.301735 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:10.368712 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:10.369080 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:11.102087 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:11.156454 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:11.156854 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:12.111147 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:12.177696 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:12.178034 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:13.232141 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:13.294859 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:13.294981 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:14.109406 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:14.185157 #25106]  INFO -- : 1
+I, [2015-06-06T22:15:14.185501 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:14.752642 #25106]  INFO -- : processed 1 files
+I, [2015-06-06T22:15:14.825309 #25106]  INFO -- : 2
+I, [2015-06-06T22:15:14.825665 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T22:15:15.398324 #25106]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T22:15:16.016559 #25106]  INFO -- : processed 2 files
+I, [2015-06-06T23:48:55.623471 #1348]  INFO -- : 2
+I, [2015-06-06T23:48:55.623625 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:56.316264 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:56.316997 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:56.880331 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:48:56.935891 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:56.936018 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:57.467876 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:48:57.530027 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:57.530442 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:58.168165 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:48:58.235948 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:58.236534 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:58.780190 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:48:58.850364 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:58.850813 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:48:59.410192 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:48:59.458942 #1348]  INFO -- : 1
+I, [2015-06-06T23:48:59.459072 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:00.013704 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:00.067214 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:00.067336 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:00.664706 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:00.718470 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:00.718868 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:01.301284 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:01.361665 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:01.361791 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:01.907310 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:01.971792 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:01.972139 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:02.544236 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:02.608458 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:02.608578 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:03.212482 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:03.272903 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:03.273315 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:03.821158 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:03.888378 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:03.888738 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:04.442538 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:04.511959 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:04.512309 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:05.343423 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:05.412557 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:05.412933 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:06.195661 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:06.234548 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:06.234686 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:07.091810 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:07.149199 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:07.149561 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:07.918963 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:07.964563 #1348]  INFO -- : 1
+I, [2015-06-06T23:49:07.964967 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:08.558439 #1348]  INFO -- : processed 1 files
+I, [2015-06-06T23:49:08.633200 #1348]  INFO -- : 2
+I, [2015-06-06T23:49:08.633571 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:49:09.227275 #1348]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T23:50:48.505790 #1895]  INFO -- : 2
+I, [2015-06-06T23:50:48.506231 #1895]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:51:59.892366 #1982]  INFO -- : 2
+I, [2015-06-06T23:51:59.892843 #1982]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:00.573477 #1982]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T23:52:00.574946 #1982]  INFO -- : processed 2 files
+I, [2015-06-06T23:52:22.748998 #2038]  INFO -- : 2
+I, [2015-06-06T23:52:22.749163 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:23.315126 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T23:52:23.316655 #2038]  INFO -- : processed 2 files
+I, [2015-06-06T23:52:23.370419 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:23.370904 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:24.010346 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:24.066706 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:24.067105 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:24.650989 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:24.717591 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:24.717860 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:25.289401 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:25.357894 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:25.358275 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:25.910106 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:25.971280 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:25.971660 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:26.576147 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:26.617208 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:26.617611 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:27.198658 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:27.266423 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:27.266853 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:27.806829 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:27.864049 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:27.864431 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:28.432563 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:28.503410 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:28.503547 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:29.110221 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:29.167554 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:29.167697 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:29.725720 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:29.801086 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:29.801224 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:30.368180 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:30.412667 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:30.413039 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:30.991604 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:31.049918 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:31.050296 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:31.615971 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:31.678222 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:31.678621 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:32.440629 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:32.511319 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:32.511451 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:33.290119 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:33.346453 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:33.346883 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:34.122921 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:34.182646 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:34.183115 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:35.012826 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:35.065200 #2038]  INFO -- : 1
+I, [2015-06-06T23:52:35.065601 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:35.663541 #2038]  INFO -- : processed 1 files
+I, [2015-06-06T23:52:35.717082 #2038]  INFO -- : 2
+I, [2015-06-06T23:52:35.717457 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:52:36.296446 #2038]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-06T23:52:36.872724 #2038]  INFO -- : processed 2 files
+I, [2015-06-06T23:55:03.666133 #2915]  INFO -- : 1
+I, [2015-06-06T23:55:03.666352 #2915]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:55:04.382721 #2915]  INFO -- : processed 1 files
+I, [2015-06-06T23:55:26.109301 #2988]  INFO -- : 1
+I, [2015-06-06T23:55:26.109737 #2988]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:55:26.775145 #2988]  INFO -- : processed 1 files
+I, [2015-06-06T23:55:53.711985 #3069]  INFO -- : 1
+I, [2015-06-06T23:55:53.712156 #3069]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:55:54.454684 #3069]  INFO -- : processed 1 files
+I, [2015-06-06T23:56:30.372376 #3209]  INFO -- : 1
+I, [2015-06-06T23:56:30.372815 #3209]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:57:10.997829 #3283]  INFO -- : 1
+I, [2015-06-06T23:57:10.998265 #3283]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-06T23:58:05.790087 #3394]  INFO -- : 1
+I, [2015-06-06T23:58:05.790236 #3394]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:06:21.387251 #3536]  INFO -- : 1
+I, [2015-06-07T00:06:21.387436 #3536]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:08:31.191286 #3654]  INFO -- : 1
+I, [2015-06-07T00:08:31.191432 #3654]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:13:46.766213 #3943]  INFO -- : 1
+I, [2015-06-07T00:13:46.766392 #3943]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:13:47.452316 #3943]  INFO -- : processed 1 files
+I, [2015-06-07T00:14:26.615531 #4024]  INFO -- : 1
+I, [2015-06-07T00:14:26.615676 #4024]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:14:27.328135 #4024]  INFO -- : processed 1 files
+I, [2015-06-07T00:21:45.957106 #4199]  INFO -- : 1
+I, [2015-06-07T00:21:45.957315 #4199]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:21:46.620410 #4199]  INFO -- : processed 1 files
+I, [2015-06-07T00:22:23.863116 #4279]  INFO -- : 1
+I, [2015-06-07T00:22:23.863550 #4279]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:22:24.572199 #4279]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:32.110513 #4517]  INFO -- : 2
+I, [2015-06-07T00:24:32.110675 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:32.697429 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-07T00:24:32.698367 #4517]  INFO -- : processed 2 files
+I, [2015-06-07T00:24:32.722692 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:32.722805 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:33.427291 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:33.486964 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:33.487333 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:34.057007 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:34.120747 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:34.120874 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:34.695658 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:34.751891 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:34.752286 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:35.320700 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:35.392753 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:35.393189 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:35.991236 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:36.053687 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:36.053911 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:36.611086 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:36.652065 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:36.652423 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:37.236321 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:37.310321 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:37.310758 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:37.848314 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:37.915931 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:37.916569 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:38.499279 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:38.548705 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:38.548936 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:39.147366 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:39.214524 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:39.214785 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:39.766307 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:39.817175 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:39.817298 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:40.395561 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:40.455461 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:40.455812 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:41.040698 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:41.103708 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:41.104096 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:41.664580 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:41.696993 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:41.697116 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:42.745935 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:42.812966 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:42.813146 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:43.572016 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:43.634522 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:43.634832 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:44.781224 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:44.808199 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:44.808328 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:45.544980 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:45.572194 #4517]  INFO -- : 1
+I, [2015-06-07T00:24:45.572327 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:46.130553 #4517]  INFO -- : processed 1 files
+I, [2015-06-07T00:24:46.219547 #4517]  INFO -- : 2
+I, [2015-06-07T00:24:46.219651 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE.doc
+I, [2015-06-07T00:24:46.782893 #4517]  INFO -- : /home/kevin/rezoome/rails/tmp/resumes/alabama/JONES, BOB MOBILE2.doc
+I, [2015-06-07T00:24:47.383529 #4517]  INFO -- : processed 2 files
