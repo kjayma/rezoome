@@ -2,8 +2,18 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
 
+/* global require, module */
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var app = new EmberApp({
+  vendorFiles: {
+    'handlebars.js': null
+  },
+  name: require('./package.json').name,
+
+  getEnvJSON: require('./config/environment')
+});
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
@@ -16,5 +26,13 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+// If the library that you are including contains AMD or ES6 modules that
+// you would like to import into your application please specify an
+// object with the list of modules as keys along with the exports of each
+// module as its value.
+// Mocha support: JSHint tests are current QUnit and fail to run
+app.hinting = false;
+//
 
 module.exports = app.toTree();
