@@ -1,22 +1,24 @@
-nav.navbar.navbar-inverse.navbar-fixed-top
+nav.navbar.navbar-default.navbar-fixed-top
   .container
     .navbar-header
       button.navbar-toggle.collapsed data-toggle="collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
-      a.navbar-brand.rezoome_header href="#"
+      link-to class="navbar-brand rezoome_header" "application"
         |Rezoome
     .navbar.navbar-collapse
       ul.nav.navbar-nav
         li
-          a href="#"
-            |Jobs
+          link-to "job_search"
+            |Job Search
         li
-          a href="#"
-            |Candidates
+          link-to "people"
+            |People
+        li
+          a href="jobs"
+            |Jobs
 
 .container
   .rezoome
-    |this worked
     == outlet
