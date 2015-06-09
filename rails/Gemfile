@@ -11,6 +11,7 @@ gem "devise"
 gem "grape"
 gem "grape-active_model_serializers"
 gem "grape-swagger-rails"
+gem "rack-cors", require: "rack/cors"
 gem 'geokit-rails'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -62,6 +63,5 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "shoulda-matchers"
-  gem "spring-commands-rspec"
 end
 
