@@ -7,8 +7,11 @@ gem 'sqlite3'
 gem 'mongoid', '~> 4.0.0'
 gem 'mongoid-grid_fs'
 gem 'yomu'
+gem "devise"
+gem "grape"
+gem "grape-active_model_serializers"
+gem "grape-swagger-rails"
 gem 'geokit-rails'
-gem 'active_model_serializers', '0.9.3'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
