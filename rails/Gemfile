@@ -8,6 +8,7 @@ gem 'mongoid', '~> 4.0.0'
 gem 'mongoid-grid_fs'
 gem 'yomu'
 gem "devise"
+gem "active_model_serializers"
 gem "grape"
 gem "grape-active_model_serializers"
 gem "grape-swagger-rails"
