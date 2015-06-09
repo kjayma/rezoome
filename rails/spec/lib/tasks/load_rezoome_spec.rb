@@ -10,8 +10,8 @@ describe 'rake task' do
   describe 'load_resumes' do
     let!(:rails_root){ File.expand_path(File.dirname(__FILE__) + '/../../../') }
     let :run_rake_task do
-      Rake::Task["load:resumes"].reenable
-      Rake.application.invoke_task "load:resumes[#{rails_root}/tmp/resumes]"
+      Rake::Task["rezoome:load:resumes"].reenable
+      Rake.application.invoke_task "rezoome:load:resumes[#{rails_root}/tmp/resumes]"
     end
     let!(:resume){ "Bob Jones\n105 Magnolia Lane\nMobile, AL 38838 \n othere bob@yahoo.com suff 23383 fof" }
 
@@ -157,6 +157,10 @@ describe 'rake task' do
         end
       end
     end
+  end
+
+  describe 'fix_state' do
+
   end
 
   describe 'geocode' do

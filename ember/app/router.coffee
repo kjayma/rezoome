@@ -6,7 +6,8 @@ Router = Ember.Router.extend
 
 Router.map ->
   this.resource 'job_search', ->
-    this.resource 'candidates'
+    this.resource 'candidates', ->
+      this.route "show"
   this.route 'jobs'
   this.route 'people'
 

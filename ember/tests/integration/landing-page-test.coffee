@@ -18,7 +18,7 @@ describe 'Integration - Landing Page', ->
 
   it 'should navigate to the People page', ->
     visit('/').then ->
-      click('a:contains("people")').then ->
+      click('a:contains("People")').then ->
         expect(find('h3').text()).to.equal('People')
 
   it 'Should allow navigating back to root from another page', ->

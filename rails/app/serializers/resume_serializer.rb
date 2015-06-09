@@ -1,6 +1,5 @@
 class ResumeSerializer < ActiveModel::Serializer
-  attributes
-    :id,
+  attributes :id,
     :md5sum,
     :primary_email,
     :filename,
