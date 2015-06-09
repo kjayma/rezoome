@@ -107,23 +107,24 @@ namespace :load do
     zip_regex_pre           = / +(\d{5}(?:[-\s]\d{4})?)/
     zip_regex               = /(?<![Bb]ox)#{zip_regex_pre}/
     state_regex             = /(\w+)#{zip_regex}/
-    city_regex              = /[\n,\*•♦ ]* *([\w \-\']*)[, ] *#{state_regex}/
-    city_no_zip_regex       = /[\n,\*•♦ ]* *([\w \-\']*), *(#{states.join('|')})/
-    address_regex           = /[\n,\*•♦ ]* *(\w* *\d+[\w\-\d ]*)#{city_regex}/
-    address_no_zip_regex    = /[\n,\*•♦ ]* *(\w* *\d+[\w\-\d ]*)#{city_no_zip_regex}/
+    delimiters              = /[\n,\*•♦ ]/
+    city_regex              = /#{delimiters}* *([\w \-\']*)[, ] *#{state_regex}/
+    city_no_zip_regex       = /#{delimiters}* *([\w \-\']*), *(#{states.join('|')})/
+    address_no_zip_regex    = /#{delimiters}* *(\w* *\d+[\w\-\d ]*)#{city_no_zip_regex}/
 
     address_hash            = {}
 
     result                  = full_text.match(zip_regex)
-    address_hash[:zip]      = result ? result[1] : nil
+    address_hash[:zip]      = zip = result ? result[1] : nil
 
     if address_hash[:zip]
       result                  = full_text.match(state_regex)
-      address_hash[:state]    = result ? result[1] : nil
+      address_hash[:state]    = state = result ? result[1] : nil
 
       result                  = full_text.match(city_regex)
-      address_hash[:city]     = result ? result[1] : nil
+      address_hash[:city]     = city = result ? result[1] : nil
 
+      address_regex           = /[\n,\*•♦ ]* *(\w* *\d+[\w\-\d ]*)#{delimiters}*#{city}.*#{state}.*#{zip}/
       result                  = full_text.match(address_regex)
       address_hash[:address1] = result ? result[1] : nil
     else
@@ -131,6 +132,7 @@ namespace :load do
       address_hash[:city]     = city  = result ? result[1] : nil
       address_hash[:state]    = state = result ? result[2] : nil
 
+      address_no_zip_regex    = /[\n,\*•♦ ]* *(\w* *\d+[\w\-\d ]*)#{delimiters}*#{city}.*#{state}/
       result                  = full_text.match(address_no_zip_regex)
       address_hash[:address1] = result ? result[1] : nil
 
