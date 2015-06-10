@@ -1,0 +1,10 @@
+here i am
+<ul>
+  {{#each resume in model}}
+    <li>
+      {{link-to resume.lastName 'resumes.show' resume}}
+    </li>
+  {{else}}
+    <li>no contacts found</li>
+  {{/each}}
+</ul>

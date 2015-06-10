@@ -18,18 +18,18 @@ describe 'Integration - Landing Page', ->
 
   it 'should navigate to the People page', ->
     visit('/').then ->
-      click('a:contains("people")').then ->
+      click('a:contains("People")').then ->
         expect(find('h3').text()).to.equal('People')
 
   it 'Should allow navigating back to root from another page', ->
     visit('/people').then ->
-      click('a:contains("Rezoome")').then ->
+      click('a:contains("Job Search")').then ->
         expect(find('h3').text()).to.not.equal('People')
 
   it 'should navigate to the Job Search page', ->
-    visit('/job_search').then ->
-      click('a:contains("Jobs")').then ->
-        expect(find('h4').text()).to.contain('Jobs')
+    visit('/').then ->
+      click('a:contains("Job Search")').then ->
+        expect(find('h4').text()).to.contain('Candidates')
 
   it 'should navigate to the Jobs page', ->
     visit('/jobs').then ->

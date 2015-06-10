@@ -5,10 +5,10 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->
-  this.resource 'job_search', ->
-    this.resource 'candidates'
-  this.route 'jobs'
-  this.route 'people'
+  @resource 'resumes', ->
+    @route 'show', path: '/:resume_id'
+  @route 'jobs'
+  @route 'people'
 
 `export default Router`
 
