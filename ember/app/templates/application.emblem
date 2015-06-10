@@ -10,7 +10,7 @@ nav.navbar.navbar-default.navbar-fixed-top
     .navbar.navbar-collapse
       ul.nav.navbar-nav
         li
-          link-to "job_search"
+          link-to "resumes"
             |Job Search
         li
           link-to "people"

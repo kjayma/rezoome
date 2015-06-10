@@ -1,0 +1,54 @@
+.row
+  .col-md-3
+    h4 Example Jobs
+    = bs-button-group class="btn-group-vertical" value=buttonGroupValue type="radio"
+      = bs-button value=1
+        | Avenger Sales Rep - Cleveland
+      = bs-button value=2
+        | Abiomed - Marketing Director
+      = bs-button value=3
+        | Abiomed - Sales Rep - Sausalito
+
+  .col-md-9
+    .row
+      .col-md-12
+        h4.center-text Candidates
+        .search_container
+          h5 Search By
+          form.form-inline
+            .form-group
+              .row
+                .col-md-12
+                  .input-group.zip
+                    label for="zip" class="sr-only" Zip:&nbsp;
+                    = input value=zip id="zip" class="form-control input-sm" placeholder="Zip"
+                  label for="radius" class="sr-only" Search Radius:&nbsp;
+                  .input-group.radius
+                    = input type="text" value=zip id="radius" class="form-control input-sm" placeholder="Search Radius"
+                    .input-group-addon.radius.input-sm miles
+                  label for="search_terms" class="sr-only" Keywords :&nbsp;
+                  = textarea rows="3" value=search_terms id="search_terms" class="form-control input-sm" placeholder="Keywords"
+              .row
+                .col-md-12.second_row
+                  .input-group.primary_email
+                    label for="primary_email" class="sr-only" Email:&nbsp;
+                    = input value=primary_email id="primary_email" class="form-control input-sm" placeholder="Email"
+                  .input-group.last_name
+                    label for="last_name" class="sr-only" Last Name:&nbsp;
+                    = input value=last_name id="last_name" class="form-control input-sm" placeholder="Last Name"
+                  .input-group.first_name
+                    label for="first_name" class="sr-only" First Name:&nbsp;
+                    = input value=first_name id="first_name" class="form-control input-sm" placeholder="First Name"
+                  .input-group.state
+                    label for="state" class="sr-only" State:&nbsp;
+                    = input value=state id="state" class="form-control input-sm" placeholder="State"
+              .row
+                .col-md-12.third_row
+                  a href="#" class="btn btn-primary btn-sm" | Search Now
+    .row
+      .col-md-12
+        .results
+          .center-text
+            h5 Results
+
+            == outlet

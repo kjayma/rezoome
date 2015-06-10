@@ -1,0 +1,4 @@
+|here i am
+ul
+  each resume in model
+    li = resume.lastName

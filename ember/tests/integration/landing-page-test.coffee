@@ -27,7 +27,7 @@ describe 'Integration - Landing Page', ->
         expect(find('h3').text()).to.not.equal('People')
 
   it 'should navigate to the Job Search page', ->
-    visit('/job_search').then ->
+    visit('/resumes').then ->
       click('a:contains("Jobs")').then ->
         expect(find('h4').text()).to.contain('Jobs')
 
