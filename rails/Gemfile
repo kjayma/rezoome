@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem "uglifier", ">= 1.3.0"
 gem "less"
-gem "slim"
+gem "slim-rails"
 #gem "activeadmin"
 
 group :development do

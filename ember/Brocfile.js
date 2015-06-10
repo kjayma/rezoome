@@ -41,6 +41,5 @@ var app = new EmberApp({
 // module as its value.
 // Mocha support: JSHint tests are current QUnit and fail to run
 app.hinting = false;
-//
 
 module.exports = app.toTree();
