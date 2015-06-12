@@ -4,9 +4,9 @@ class ResumeSerializer < ActiveModel::Serializer
     :md5sum,
     :primary_email,
     :filename,
-    :last_update,
     :first_name,
     :last_name,
+    :last_update,
     :address1,
     :address2,
     :city,
@@ -18,8 +18,7 @@ class ResumeSerializer < ActiveModel::Serializer
     :notes,
 
     :resume_grid_fs_id,
-    :resume_text,
-    :location,
+    #:resume_text,
     :created_at,
     :updated_at
 end

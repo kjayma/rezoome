@@ -38,7 +38,7 @@ describe 'Integration - Resumes Page', ->
         [
           200
           { 'Content-Type': 'application/json' }
-          JSON.stringify(speaker: speaker)
+          JSON.stringify(resume: resume)
         ]
     return
 

@@ -19,7 +19,7 @@ module API
         params do
           optional :search_term, type: Array, desc: "full text search terms seperated by | character for logical AND search"
           optional :zip, type: String, desc: "zip code for location search"
-          optional :radius, type: Integer, default: 200, desc: "search radius in miles"
+          optional :radius, type: Integer, desc: "search radius in miles"
           optional :primary_email, type: String, desc: "primary email used by candidate"
           optional :last_name, type: String, desc: "last name of candidate"
           optional :first_name, type: String, desc: "first name of candidate"
@@ -35,7 +35,29 @@ module API
           conditions[:last_name] = permitted_params[:last_name] if permitted_params[:last_name]
           conditions[:first_name] = permitted_params[:first_name] if permitted_params[:first_name]
           conditions[:state] = permitted_params[:state] if permitted_params[:state]
-          Resume.where( conditions ).limit(100)
+          Resume.
+            only(
+              :id,
+              :md5sum,
+              :primary_email,
+              :filename,
+              :last_update,
+              :first_name,
+              :last_name,
+              :address1,
+              :address2,
+              :city,
+              :state,
+              :zip,
+              :home_phone,
+              :mobile_phone,
+              :doctype,
+              :notes,
+              :resume_grid_fs_id,
+              :created_at,
+              :updated_at
+            ).
+            where( conditions ).limit(2)
         end
       end
 

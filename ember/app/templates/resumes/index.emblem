@@ -1,0 +1,9 @@
+now I'm here
+ul
+  = each resume in model
+    li
+      = resume.lastName
+
+  else
+    li
+      |no contacts found

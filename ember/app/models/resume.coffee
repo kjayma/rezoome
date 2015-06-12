@@ -18,6 +18,8 @@ Resume = DS.Model.extend {
   notes: DS.attr('string')
   resume_grid_fs_id: DS.attr('string')
   resume_text: DS.attr('string')
+  created_at: DS.attr('date')
+  updated_at: DS.attr('date')
 }
 
 `export default Resume`
