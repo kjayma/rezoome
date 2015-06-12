@@ -1,0 +1,13 @@
+<ul>
+  {{#each resume in model}}
+    <li>
+      {{#link-to 'resumes.show' resume}}
+        {{resume.lastName}},
+        {{resume.firstName}}
+        ({{resume.primaryEmail}})
+      {{/link-to}}
+    </li>
+  {{else}}
+    <li>No resumes found.</li>
+  {{/each}}
+</ul>

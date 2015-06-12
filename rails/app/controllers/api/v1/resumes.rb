@@ -57,7 +57,7 @@ module API
               :created_at,
               :updated_at
             ).
-            where( conditions ).limit(2)
+            where( conditions ).limit(3)
         end
       end
 
