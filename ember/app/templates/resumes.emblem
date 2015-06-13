@@ -1,5 +1,5 @@
 .row
-  .col-md-3
+  .col-md-2
     h4 Example Jobs
     = bs-button-group class="btn-group-vertical" value=buttonGroupValue type="radio"
       = bs-button value=1
@@ -9,6 +9,9 @@
       = bs-button value=3
         | Abiomed - Sales Rep - Sausalito
 
-  .col-md-9
+  .col-md-10
     h4.center-text Candidates
-    == outlet
+
+    outlet
+
+    |{{outlet "resumeoutlet"}}

@@ -1,5 +1,5 @@
 nav.navbar.navbar-default.navbar-fixed-top
-  .container
+  .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed data-toggle="collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
         span.sr-only Toggle navigation
@@ -19,6 +19,6 @@ nav.navbar.navbar-default.navbar-fixed-top
           a href="jobs"
             |Jobs
 
-.container
+.container-fluid
   .rezoome
-    == outlet
+    outlet
