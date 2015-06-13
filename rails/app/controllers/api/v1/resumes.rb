@@ -59,7 +59,7 @@ module API
               :created_at,
               :updated_at
             ).
-            where( conditions ).limit(3)
+            where( conditions ).limit(100)
           present resumes, with: API::V1::ResumeEntity
         end
       end
