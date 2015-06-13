@@ -10,6 +10,7 @@ gem 'yomu'
 gem "devise"
 gem "active_model_serializers"
 gem "grape"
+gem "grape-entity"
 gem "grape-active_model_serializers"
 gem "grape-swagger-rails"
 gem "rack-cors", require: "rack/cors"

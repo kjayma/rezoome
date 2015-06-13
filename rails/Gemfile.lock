@@ -337,6 +337,7 @@ DEPENDENCIES
   geokit-rails
   grape
   grape-active_model_serializers
+  grape-entity
   grape-swagger-rails
   jquery-rails
   less

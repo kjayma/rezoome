@@ -1,6 +1,8 @@
 module API
   module V1
+
     class Resumes < Grape::API
+
       include API::V1::Defaults
 
       resource :resumes do
@@ -35,7 +37,7 @@ module API
           conditions[:last_name] = permitted_params[:last_name] if permitted_params[:last_name]
           conditions[:first_name] = permitted_params[:first_name] if permitted_params[:first_name]
           conditions[:state] = permitted_params[:state] if permitted_params[:state]
-          Resume.
+          resumes = Resume.
             only(
               :id,
               :md5sum,
@@ -58,6 +60,7 @@ module API
               :updated_at
             ).
             where( conditions ).limit(3)
+          present resumes, with: API::V1::ResumeEntity
         end
       end
 
