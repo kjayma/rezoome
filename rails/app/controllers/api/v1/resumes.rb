@@ -7,19 +7,34 @@ module API
       require 'mongoid/grid_fs'
 
       resource :resumes do
+        desc "Return a resume file in text"
+
+        params do
+          requires :id, type: String, desc: "ID of the resume"
+        end
+
+        get "textfiles/:id", root: "resume" do
+          content_type 'txt'
+          env['api.format'] = :txt
+
+          #grid_fs = Mongoid::GridFs
+          #grid_fs.get(permitted_params[:resume_grid_fs_id]).data
+          Resume.find_by(:id => params[:id]).resume_text
+        end
+
         desc "Return a resume file in binary"
 
         params do
-          requires :resume_grid_fs_id, type: String, desc: "ID of the resume file"
+          requires :id, type: String, desc: "ID of the resume file"
         end
 
-        get "file/:resume_grid_fs_id", root: "resume" do
+        get "files/:resume_grid_fs_id", root: "resume" do
           content_type 'application/octet-stream'
           header['content-Disposition'] = "attachment;"
           env['api.format'] = :binary
 
-          grid_fs = Mongoid::GridFs
-          grid_fs.get(permitted_params[:resume_grid_fs_id]).data
+          #grid_fs = Mongoid::GridFs
+          #grid_fs.get(permitted_params[:resume_grid_fs_id]).data
         end
 
         desc "return some resumes"
@@ -66,7 +81,7 @@ module API
               :created_at,
               :updated_at
             ).
-            where( conditions ).limit(100)
+            where( conditions ).limit(13)
           present resumes, with: API::V1::ResumeEntity
         end
       end
