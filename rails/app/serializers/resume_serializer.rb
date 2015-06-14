@@ -16,6 +16,7 @@ class ResumeSerializer < ActiveModel::Serializer
     :mobile_phone,
     :doctype,
     :notes,
+    :location,
 
     :resume_grid_fs_id,
     #:resume_text,

@@ -40,6 +40,7 @@ var app = new EmberApp({
 // object with the list of modules as keys along with the exports of each
 // module as its value.
 // Mocha support: JSHint tests are current QUnit and fail to run
+app.import('bower_components/moment/moment.js')
 app.hinting = false;
 
 module.exports = app.toTree();

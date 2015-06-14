@@ -4,16 +4,22 @@ module API
     class Resumes < Grape::API
 
       include API::V1::Defaults
+      require 'mongoid/grid_fs'
 
       resource :resumes do
-        desc "Return a resume"
+        desc "Return a resume file in binary"
 
         params do
-          requires :id, type: String, desc: "ID of the resume"
+          requires :resume_grid_fs_id, type: String, desc: "ID of the resume file"
         end
 
-        get ":id", root: "resume" do
-          Resume.find_by(id: permitted_params[:id])
+        get "file/:resume_grid_fs_id", root: "resume" do
+          content_type 'application/octet-stream'
+          header['content-Disposition'] = "attachment;"
+          env['api.format'] = :binary
+
+          grid_fs = Mongoid::GridFs
+          grid_fs.get(permitted_params[:resume_grid_fs_id]).data
         end
 
         desc "return some resumes"
@@ -55,6 +61,7 @@ module API
               :mobile_phone,
               :doctype,
               :notes,
+              :location,
               :resume_grid_fs_id,
               :created_at,
               :updated_at

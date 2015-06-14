@@ -16,7 +16,7 @@ Resume = DS.Model.extend {
   mobilePhone: DS.attr('string')
   doctype: DS.attr('string')
   notes: DS.attr('string')
-  resume_grid_fs_id: DS.attr('string')
+  resume_grid_fs_id: DS.attr('')
   resume_text: DS.attr('string')
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
