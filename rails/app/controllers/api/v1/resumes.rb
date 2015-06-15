@@ -25,7 +25,7 @@ module API
         desc "Return a resume file in binary"
 
         params do
-          requires :id, type: String, desc: "ID of the resume file"
+          requires :resume_grid_fs_id, type: String, desc: "ID of the resume file"
         end
 
         get "files/:resume_grid_fs_id", root: "resume" do
@@ -33,14 +33,14 @@ module API
           header['content-Disposition'] = "attachment;"
           env['api.format'] = :binary
 
-          #grid_fs = Mongoid::GridFs
-          #grid_fs.get(permitted_params[:resume_grid_fs_id]).data
+          grid_fs = Mongoid::GridFs
+          grid_fs.get(permitted_params[:resume_grid_fs_id]).data
         end
 
         desc "return some resumes"
 
         params do
-          optional :search_term, type: Array, desc: "full text search terms seperated by | character for logical AND search"
+          optional :search_term, type: String, desc: "full text search terms seperated by | character for logical AND search"
           optional :zip, type: String, desc: "zip code for location search"
           optional :radius, type: Integer, desc: "search radius in miles"
           optional :primary_email, type: String, desc: "primary email used by candidate"
@@ -59,8 +59,6 @@ module API
               conditions[key] = value
             end
           end
-
-          p conditions
 
           resumes = Resume.
             only(
@@ -85,13 +83,13 @@ module API
               :created_at,
               :updated_at
             ).
-            where( conditions ).limit(13)
+            where( conditions )
           present resumes, with: API::V1::ResumeEntity
         end
       end
 
       def self.parse_search(search_term)
-        terms_components = search_term.map{ |term| "(?=.*#{term})" }.join("")
+        terms_components = search_term.split('|').map{ |term| "(?=.*#{term})" }.join("")
         /#{terms_components}.*/im
       end
     end
