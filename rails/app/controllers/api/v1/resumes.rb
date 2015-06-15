@@ -54,10 +54,14 @@ module API
           search_regex = API::V1::Resumes.parse_search(search_term) if permitted_params[:search_term]
           conditions = {}
           conditions[:resume_text] = search_regex if search_term
-          conditions[:primary_email] = permitted_params[:primary_email] if permitted_params[:primary_email]
-          conditions[:last_name] = permitted_params[:last_name] if permitted_params[:last_name]
-          conditions[:first_name] = permitted_params[:first_name] if permitted_params[:first_name]
-          conditions[:state] = permitted_params[:state] if permitted_params[:state]
+          permitted_params.each do |key, value|
+            if !value.empty? && value != 'undefined' && key.to_s != 'search_term'
+              conditions[key] = value
+            end
+          end
+
+          p conditions
+
           resumes = Resume.
             only(
               :id,

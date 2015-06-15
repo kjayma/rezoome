@@ -64,10 +64,10 @@ nav.navbar.navbar-default.navbar-fixed-top
                       = input value=first_name id="first_name" class="form-control input-sm" placeholder="First Name"
                     .input-group.state
                       label for="state" class="sr-only" State:&nbsp;
-                      = input value=this.state id="state" class="form-control input-sm" placeholder="State"
+                      = input value=state id="state" class="form-control input-sm" placeholder="State"
                 .row
                   .col-md-12.third_row
-                    = link-to "resumes.index" class="btn btn-primary btn-sm" | Search Now
+                    = link-to "resumes.index.index" (query-params state=state) class="btn btn-primary btn-sm" | Search Now
         .row
           .col-md-12
             .results
