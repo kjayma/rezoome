@@ -2,9 +2,11 @@ module API
   module V1
 
     class Resumes < Grape::API
+      require 'mongoid/grid_fs'
+      require 'geokit'
 
       include API::V1::Defaults
-      require 'mongoid/grid_fs'
+      include Geokit::Geocoders
 
       resource :resumes do
         desc "Return a resume file in text"
@@ -41,7 +43,7 @@ module API
 
         params do
           optional :search_term, type: String, desc: "full text search terms seperated by | character for logical AND search"
-          optional :zip, type: String, desc: "zip code for location search"
+          optional :location, type: String, desc: "lat long for location search"
           optional :radius, type: Integer, desc: "search radius in miles"
           optional :primary_email, type: String, desc: "primary email used by candidate"
           optional :last_name, type: String, desc: "last name of candidate"
@@ -55,36 +57,33 @@ module API
           conditions = {}
           conditions[:resume_text] = search_regex if search_term
           permitted_params.each do |key, value|
-            if !value.empty? && value != 'undefined' && key.to_s != 'search_term'
-              conditions[key] = value
+            if
+              key.to_s != 'search_term' &&
+              key.to_s != 'location' &&
+              key.to_s != 'radius' &&
+              value != 'undefined' &&
+              !value.empty?
+                conditions[key] = value
             end
           end
 
-          resumes = Resume.
-            only(
-              :id,
-              :md5sum,
-              :primary_email,
-              :filename,
-              :last_update,
-              :first_name,
-              :last_name,
-              :address1,
-              :address2,
-              :city,
-              :state,
-              :zip,
-              :home_phone,
-              :mobile_phone,
-              :doctype,
-              :notes,
-              :location,
-              :resume_grid_fs_id,
-              :created_at,
-              :updated_at
-            ).
-            where( conditions )
-          present resumes, with: API::V1::ResumeEntity
+          location = nil
+          if !permitted_params[:location].nil?
+            radius = permitted_params[:radius] || 200
+            loc = MultiGeocoder.geocode(permitted_params[:location])
+            if loc.success
+              location = [loc.lng, loc.lat]
+            end
+          end
+          if location
+            resumes = Resume.without(:resume_text).where(conditions).geo_near(location).max_distance(radius).spherical.each do |r|
+                r['id'] = r._id
+                r['distance'] = r['geo_near_distance']
+              end
+          else
+            resumes = Resume.without(:resume_text).where(conditions)
+            present resumes, with: API::V1::ResumeEntity
+          end
         end
       end
 
