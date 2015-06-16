@@ -4,6 +4,8 @@ class Resume
 
   embeds_many :other_resumes
 
+  attr_accessor :distance
+
   field :md5sum, type: String
   field :primary_email, type: String
   field :filename, type: String

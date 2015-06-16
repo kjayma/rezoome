@@ -10,6 +10,12 @@
           = resume.city
           ' ,
           = resume.state
+          if resume.distance
+            ' &nbsp;-
+            = distance-in-miles resume.distance
+            | &nbsp; miles
+
           ' &nbsp;)
+
 
 outlet

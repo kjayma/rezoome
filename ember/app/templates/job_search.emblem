@@ -22,12 +22,12 @@
                  .input-group.zip
                    label for="location" class="sr-only" Location:&nbsp;
                    = input value=location id="location" class="form-control input-sm" placeholder="Location Search (city, state and/or zip)"
-                 /.form-group
-                  /.input-group.radius
-                    /label for="radius" class="sr-only" Search Radius:&nbsp;
-                    /= input value=radius id="radius" class="form-control input-sm" placeholder="Search Radius"
-                    /.input-group-addon.radius.input-sm miles
-                  /p class="help-block radius" Defaults to 200 miles
+                 .form-group
+                  .input-group.radius
+                    label for="radius" class="sr-only" Search Radius:&nbsp;
+                    = input value=radius id="radius" class="form-control input-sm" placeholder="Search Radius"
+                    .input-group-addon.radius.input-sm miles
+                  p class="help-block radius" Defaults to 200 miles
                  label for="search_term" class="sr-only" Keywords :&nbsp;
                  = textarea rows="3" value=search_term id="search_term" class="form-control input-sm" placeholder="Keywords, one per line"
                  .input-group.primary_email

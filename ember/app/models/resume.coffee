@@ -20,6 +20,7 @@ Resume = DS.Model.extend {
   resume_text: DS.attr('string')
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
+  distance: DS.attr('number')
 }
 
 `export default Resume`

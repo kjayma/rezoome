@@ -69,18 +69,18 @@ module API
 
           location = nil
           if !permitted_params[:location].nil?
-            radius = permitted_params[:radius] || 200
+            radius = (permitted_params[:radius] && !permitted_params[:radius].nil? ?  permitted_params[:radius].to_i : 200) / 3963.2
             loc = MultiGeocoder.geocode(permitted_params[:location])
             if loc.success
               location = [loc.lng, loc.lat]
             end
           end
-          if location
+          if !location.nil?
             resumes = Resume.without(:resume_text).where(conditions).geo_near(location).max_distance(radius).spherical.each do |r|
                 r['id'] = r._id
-                r['distance'] = r['geo_near_distance']
+                r.distance = r['geo_near_distance']
               end
-          else
+          elsif conditions && conditions != {}
             resumes = Resume.without(:resume_text).where(conditions)
             present resumes, with: API::V1::ResumeEntity
           end
