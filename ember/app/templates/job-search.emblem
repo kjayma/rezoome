@@ -44,7 +44,7 @@
                    = input value=state id="state" class="form-control input-sm" placeholder="State"
              .row
                .col-md-12.third_row
-                 = link-to "resumes.index.index" (query-params state=state primary_email=primary_email last_name = last_name first_name = first_name location = location radius = radius search_term = search_term) class="btn btn-primary btn-sm" | Search Now
+                 = link-to "resumes.index.index" (query-params state=state primary_email=primary_email last_name = last_name first_name = first_name location = location radius = radius search_term = search_term) class="btn btn-primary btn-sm" id="search" | Search Now
      .row
        .col-md-12
          .results
