@@ -17,8 +17,4 @@ ResumesIndex = Ember.Route.extend
     queryParamsDidChange: ->
       @.refresh()
 
-  resumeCount: -> (
-    @.get("model.resume.length")
-  ).property("model.resume.[]")
-
 `export default ResumesIndex`

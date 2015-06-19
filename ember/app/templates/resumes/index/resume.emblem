@@ -16,7 +16,7 @@ h4.resume
   ' Last Updated:
   = formatted-date lastUpdate 'MMMM Do, YYYY [at] h:mm a'
 .row
+  a href=model.resumefileurl Download Actual Resume
 
-  a href="http://localhost:3000/api/v1/resumes/files/{{model.resume_grid_fs_id}}" Download Actual Resume
 .row
-  object data="http://localhost:3000/api/v1/resumes/textfiles/{{model.id}}" width="98%" height="250" type="text/plain" class="resume_text"
+  object data=model.resumetexturl width="98%" height="250" type="text/plain" class="resume_text"
