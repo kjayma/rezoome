@@ -8,8 +8,7 @@ Router.map ->
   @route 'job-search', path: '/', ->
     @resource 'resumes', path: '/resumes', ->
       @route 'index', path: '/', ->
-        @route 'show', path: '/:resume_id', ->
-          @route 'show-file', path: '/:resume_grid_fs_id'
+        @route 'resume', path: '/:resume_id'
   @route 'jobs'
   @route 'people'
 

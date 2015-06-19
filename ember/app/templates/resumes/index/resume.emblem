@@ -1,7 +1,5 @@
 h4.resume
-  = model.firstName
-  | &nbsp;
-  = model.lastName
+  = model.fullName
 .row
   = model.filename
 .row

@@ -1,8 +1,8 @@
 .row.resume_list
-  = each resume in model
+  = each resume in controller
     .col-md-3
       = bs-button value=resume.id class="btn-info btn-default btn-sm"
-        = link-to 'resumes.index.show' resume
+        = link-to 'resumes.index.resume' resume
           = resume.lastName
           ' ,
           = resume.firstName

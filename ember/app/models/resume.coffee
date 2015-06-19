@@ -21,6 +21,9 @@ Resume = DS.Model.extend {
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
   distance: DS.attr('number')
+  fullName: ( ->
+    @get('firstName') + ' ' + @get('lastName')
+  ).property('firstName', 'lastName')
 }
 
 `export default Resume`
