@@ -8,21 +8,20 @@
       .row.resume_list
         = each resume in controller
           .col-md-3
-            = bs-button value=resume.id class="btn-info btn-default btn-sm"
-              = link-to 'resumes.index.resume' resume
-                = resume.lastName
-                ' ,
-                = resume.firstName
-                ' &nbsp;(
-                = resume.city
-                ' ,
-                = resume.state
-                if resume.distance
-                  ' &nbsp;-
-                  = distance-in-miles resume.distance
-                  | &nbsp; miles
+            = link-to 'resumes.index.resume' resume class="btn btn-info btn-small"
+              = resume.lastName
+              ' ,
+              = resume.firstName
+              ' &nbsp;(
+              = resume.city
+              ' ,
+              = resume.state
+              if resume.distance
+                ' &nbsp;-
+                = distance-in-miles resume.distance
+                | &nbsp; miles
 
-                ' &nbsp;)
+              ' &nbsp;)
 
       outlet
 
