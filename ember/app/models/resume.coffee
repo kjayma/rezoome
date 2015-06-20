@@ -34,8 +34,8 @@ Resume = DS.Model.extend {
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')
     namespace = adapterfor.namespace
-    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id')
-  ).property('resume_grid_fs_id')
+    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id') + '?filename=' + @get('fullName')
+  ).property('resume_grid_fs_id', 'fullName')
 }
 
 `export default Resume`

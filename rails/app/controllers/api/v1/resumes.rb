@@ -28,11 +28,12 @@ module API
 
         params do
           requires :resume_grid_fs_id, type: String, desc: "ID of the resume file"
+          optional :filename, type: String, desc: "preferred filename"
         end
 
         get "files/:resume_grid_fs_id", root: "resume" do
           content_type 'application/octet-stream'
-          header['content-Disposition'] = "attachment;"
+          header['content-Disposition'] = "attachment; filename='#{permitted_params[:filename]}'"
           env['api.format'] = :binary
 
           grid_fs = Mongoid::GridFs
