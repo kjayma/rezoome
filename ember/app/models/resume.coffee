@@ -24,18 +24,18 @@ Resume = DS.Model.extend {
   fullName: ( ->
     @get('firstName') + ' ' + @get('lastName')
   ).property('firstName', 'lastName')
-  resumetexturl: ( ->
+  resumeTextUrl: ( ->
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')
     namespace = adapterfor.namespace
     'http://' + host + '/' + namespace + '/resumes/textfiles/' + @get('id')
   ).property('id')
-  resumefileurl: ( ->
+  resumeFileUrl: ( ->
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')
     namespace = adapterfor.namespace
-    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id') + '?filename=' + @get('fullName')
-  ).property('resume_grid_fs_id', 'fullName')
+    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id') + '?filename=' + @get('fullName') + '.' + @get('doctype')
+  ).property('resume_grid_fs_id', 'fullName', 'doctype')
 }
 
 `export default Resume`
