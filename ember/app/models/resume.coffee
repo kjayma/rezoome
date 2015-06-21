@@ -1,6 +1,6 @@
 `import DS from 'ember-data'`
 
-Resume = DS.Model.extend {
+Resume = DS.Model.extend
   md5sum: DS.attr('string')
   primaryEmail: DS.attr('string')
   filename: DS.attr('string')
@@ -21,6 +21,7 @@ Resume = DS.Model.extend {
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
   distance: DS.attr('number')
+  otherResumes: DS.hasMany('OtherResume', {embedded: true})
   fullName: ( ->
     @get('firstName') + ' ' + @get('lastName')
   ).property('firstName', 'lastName')
@@ -36,6 +37,5 @@ Resume = DS.Model.extend {
     namespace = adapterfor.namespace
     'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id') + '?filename=' + @get('fullName') + '.' + @get('doctype')
   ).property('resume_grid_fs_id', 'fullName', 'doctype')
-}
 
 `export default Resume`

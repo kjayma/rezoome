@@ -18,6 +18,7 @@ class ResumeSerializer < ActiveModel::Serializer
     :notes,
     :location,
     :distance,
+    :other_resumes,
 
     :resume_grid_fs_id,
     #:resume_text,

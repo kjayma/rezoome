@@ -3,6 +3,8 @@ h4.resume
 .row
   = model.filename
 .row
+  = model.primaryEmail
+.row
   = model.address1
 .row
   = model.address2
@@ -14,9 +16,17 @@ h4.resume
   =model.zip
 .row
   ' Last Updated:
-  = formatted-date lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+  = formatted-date model.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+  = each other_resume in model.otherResumes
+    = formatted-date other_resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+
+.row
+  = resume-carousel other_resumes=model.otherResumes
+
 .row
   a href=model.resumeFileUrl Download Actual Resume
 
 .row
   object data=model.resumeTextUrl width="98%" height="250" type="text/plain" class="resume_text"
+
+
