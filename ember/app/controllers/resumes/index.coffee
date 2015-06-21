@@ -5,6 +5,6 @@ ResumesIndexController = Ember.ArrayController.extend
 
   resumeCount: ( ->
     @.get('length')
-  ).property()
+  ).property('model')
 
 `export default ResumesIndexController`

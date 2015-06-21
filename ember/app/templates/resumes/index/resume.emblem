@@ -17,19 +17,6 @@ h4.resume
   = formatted-date lastUpdate 'MMMM Do, YYYY [at] h:mm a'
 .row
   a href=model.resumeFileUrl Download Actual Resume
-.row.emailer
-  form.form-inline
-    .form-group
-      .input-group.email_to
-        label for="email_to" class="sr-only" Location:&nbsp;
-        = input value=email_to id="email_to" class="form-control input-sm" placeholder="email address"
-      .input-group.email_subject
-        label for="email_subject" class="sr-only" Location:&nbsp;
-        = input value=email_subject id="email_subject" class="form-control input-sm" placeholder="subject"
-      .input-group.email_body
-        label for="email_body" class="sr-only" Location:&nbsp;
-        = input value=email_body id="email_body" class="form-control input-sm" placeholder="message"
-      a class="btn btn-primary btn-sm" click="emailResume" Mail Resume
 
 .row
   object data=model.resumeTextUrl width="98%" height="250" type="text/plain" class="resume_text"

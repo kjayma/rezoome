@@ -7,8 +7,6 @@ ResumesIndexResumeController = Ember.Controller.extend
       email_subject = @.get('email_subject')
       email_body = @.get('email_body')
       attachment = @.get('model').get('resumeFileUrl')
-      mail_string = 'mailto:' + email_to + '?subject=' + email_subject + '&body=' + email_body + '&attachment=' + attachment
-      console.log(mail_string)
-      window.location = mail_string
+      alert('this feature is not yet in service')
 
 `export default ResumesIndexResumeController`
