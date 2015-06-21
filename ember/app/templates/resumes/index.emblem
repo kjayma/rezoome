@@ -8,7 +8,7 @@
       .row.resume_list
         = each resume in controller
           .col-md-3
-            = link-to 'resumes.index.resume' resume class="btn btn-info btn-small"
+            = link-to 'resumes.index.resume' resume class="btn btn-info btn-sm"
               = resume.lastName
               ' ,
               = resume.firstName
@@ -24,4 +24,3 @@
               ' &nbsp;)
 
       outlet
-

@@ -1,0 +1,14 @@
+.row
+  br
+  br
+  .waiting
+
+    |Processing
+    br
+    br
+    .waiting-container
+      #block_1.barlittle
+      #block_2.barlittle
+      #block_3.barlittle
+      #block_4.barlittle
+      #block_5.barlittle
