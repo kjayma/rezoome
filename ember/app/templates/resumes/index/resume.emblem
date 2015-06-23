@@ -17,11 +17,9 @@ h4.resume
 .row
   ' Last Updated:
   = formatted-date model.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
-  = each other_resume in model.otherResumes
-    = formatted-date other_resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
 
 .row
-  = resume-carousel other_resumes=model.otherResumes
+  = resume-carousel other_resumes=model.others
 
 .row
   a href=model.resumeFileUrl Download Actual Resume

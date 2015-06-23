@@ -12,10 +12,7 @@ App = Ember.Application.extend
   modulePrefix: config.modulePrefix
   podModulePrefix: config.podModulePrefix
   Resolver: Resolver
-  name: "embeddedAdapter"
 
 loadInitializers(App, config.modulePrefix)
-App.register('serializer:_embedded',DS.EmbeddedSerializer)
-App.register('adapter:_embedded',DS.EmbeddedAdapter)
 
 `export default App`

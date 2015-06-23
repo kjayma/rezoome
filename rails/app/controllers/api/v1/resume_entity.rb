@@ -19,7 +19,7 @@ module API
       expose :mobile_phone
       expose :doctype
       expose :notes
-      expose :other_resumes, using: API::V1::OtherResumeEntity
+      expose :other_resumes, as: :others, using: API::V1::OtherResumeEntity
       expose :resume_grid_fs_id
       expose :created_at
       expose :updated_at

@@ -6,7 +6,12 @@
   .carousel-inner role="listbox"
     = each resume in other_resumes
       .item
-        object data=resume.resumeTextUrl width="98%" height="250" type="text/plain" class="resume_text"
+        .carousel-caption
+          h4
+            | Last Updated: &nbsp;
+            = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+          pre style="overflow-x: scroll;"
+            resume.resumeText
   a.left.carousel-control click="previousSlide" role="button"
     span.glyphicon.glyphicon-chevron-left aria-hidden="true"
     span.sr-only Previous
