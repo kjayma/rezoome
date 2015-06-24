@@ -8,7 +8,7 @@ ResumeCarouselComponent = Ember.Component.extend
     Ember.$('.carousel-indicators li').each (index, li) ->
       Ember.$(li).attr('data-slide-to', index)
 
-    Ember.$('.carousel').carousel()
+    Ember.$('.carousel').carousel('pause')
     return
 
   actions:
