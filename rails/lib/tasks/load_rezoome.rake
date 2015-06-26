@@ -41,6 +41,27 @@ namespace :load do
     end
   end
 
+  desc "update other resumes by adding parent resume"
+  task :update_other_resumes => :environment do
+    Resume.all.each do |resume|
+      logger.info(resume.filename)
+      md5s = resume.other_resumes.collect(&:md5sum)
+      unless md5s.include? resume.md5sum
+        resume.other_resumes.create!(
+          resume_text: resume.resume_text,
+          md5sum: resume.md5sum,
+          last_update: resume.last_update,
+          resume_grid_fs_id: resume.resume_grid_fs_id
+        )
+      end
+      resume.unset('md5sum') if resume.md5sum
+      resume.unset('resume_text') if resume.resume_text
+      resume.unset('resume_grid_fs_id') if resume.resume_grid_fs_id
+      resume.unset('last_update') if resume.last_update
+      resume.save!
+    end
+  end
+
   desc "Fix states"
   task :fix_states => :environment do
     Resume.all.each do |resume|

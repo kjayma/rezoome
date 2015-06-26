@@ -27,7 +27,6 @@ class Resume
   field :location, type: Array
 
   index({ primary_email: 1}, { unique: true })
-  index({ md5sum: 1}, { unique: true })
   index({ state: 1})
   index({ last_name: 1})
   index({ zip: 1})

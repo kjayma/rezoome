@@ -25,6 +25,8 @@ Mongoid.load!('./config/mongoid.yml')
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.color = true
+  config.formatter = 'documentation'
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   #config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -46,6 +48,8 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+  config.include FactoryGirl::Syntax::Methods
+
   config.infer_spec_type_from_file_location!
   config.before(:each) do
      Mongoid.purge!

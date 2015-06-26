@@ -7,9 +7,15 @@
     = each resume in other_resumes
       .item
         .carousel-caption
-          h4
-            | Last Updated: &nbsp;
-            = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+          ul
+            li
+              h4
+              | Last Updated: &nbsp;
+              = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+            li
+              button class="btn btn-primary btn-sm"
+                a href=model.resumeFileUrl Download Actual Resume
+
           pre style="overflow-x: scroll;"
             resume.resumeText
   a.left.carousel-control click="previousSlide" role="button"

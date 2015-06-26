@@ -4,6 +4,7 @@ module API
   module V1
     class OtherResumeEntity < BaseEntity
       # _id will be exposed through class inheritance
+      expose :_id, :as => :id
       expose :last_update
       expose :resume_text
       expose :created_at

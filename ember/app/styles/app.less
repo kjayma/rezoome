@@ -119,7 +119,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 500px;
+  height: 550px;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -137,8 +137,17 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+  height: 550px;
   background-color: #777;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 10px 0;
+      padding: 0;
+    }
+  }
 }
 .carousel-inner > .item > img {
   position: absolute;

@@ -15,16 +15,12 @@ h4.resume
   | &nbsp;
   =model.zip
 .row
-  ' Last Updated:
-  = formatted-date model.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
+  = model.fullName
+  '&nbsp;has
+  = model.resumesOnFile
+  |&nbsp; resumes on file
 
 .row
   = resume-carousel other_resumes=model.otherResumes
-
-.row
-  a href=model.resumeFileUrl Download Actual Resume
-
-.row
-  object data=model.resumeTextUrl width="98%" height="250" type="text/plain" class="resume_text"
 
 

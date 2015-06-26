@@ -56,7 +56,7 @@ module API
           search_term = permitted_params[:search_term]
           search_regex = API::V1::Resumes.parse_search(search_term) if permitted_params[:search_term]
           conditions = {}
-          conditions[:resume_text] = search_regex if search_term
+          conditions['other_resumes.resume_text'] = search_regex if search_term
           permitted_params.each do |key, value|
             if
               key.to_s != 'search_term' &&
@@ -77,10 +77,11 @@ module API
             end
           end
           if !location.nil?
-            resumes = Resume.without(:resume_text).where(conditions).geo_near(location).max_distance(radius).spherical.each do |r|
+            resumes = Resume.where(conditions).geo_near(location).max_distance(radius).spherical.each do |r|
                 r['id'] = r._id
                 r.distance = r['geo_near_distance']
               end
+            present resumes, with: API::V1::ResumeEntity
           elsif conditions && conditions != {}
             resumes = Resume.without(:resume_text).where(conditions)
             present resumes, with: API::V1::ResumeEntity

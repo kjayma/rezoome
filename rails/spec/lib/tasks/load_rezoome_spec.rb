@@ -159,6 +159,56 @@ describe 'rake task' do
     end
   end
 
+  describe 'update_other_resumes' do
+    let!(:rails_root){ File.expand_path(File.dirname(__FILE__) + '/../../../') }
+    let :run_rake_task do
+      Rake::Task["load:update_other_resumes"].reenable
+      Rake.application.invoke_task "load:update_other_resumes"
+    end
+    let!(:resume) { FactoryGirl.create(:resume)}
+
+    it "starts with a count of 2 other resumes" do
+      expect(resume.other_resumes.count).to eql 2
+    end
+
+    it "ends with a count of 3" do
+      run_rake_task
+      resume.reload
+      expect(resume.other_resumes.count).to eql 3
+    end
+
+    it "has resume 1 in the other_resumes" do
+      text = resume.resume_text
+      run_rake_task
+      resume.reload
+      expect(resume.other_resumes.collect(&:resume_text)).to include text
+    end
+
+    it "removes resume_text from parent" do
+      run_rake_task
+      resume.reload
+      expect(resume.resume_text).to be_nil
+    end
+
+    it "removes resume_file from parent" do
+      run_rake_task
+      resume.reload
+      expect(resume.resume_grid_fs_id).to be_nil
+    end
+
+    it "removes md5sum from parent" do
+      run_rake_task
+      resume.reload
+      expect(resume.md5sum).to be_nil
+    end
+
+    it "removes last_update from parent" do
+      run_rake_task
+      resume.reload
+      expect(resume.last_update).to be_nil
+    end
+  end
+
   describe 'geocode' do
     let!(:rails_root){ File.expand_path(File.dirname(__FILE__) + '/../../../') }
     let :run_rake_task do
