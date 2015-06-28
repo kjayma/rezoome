@@ -54,6 +54,8 @@ namespace :load do
           resume_grid_fs_id: resume.resume_grid_fs_id
         )
       end
+    end
+    Resume.all.each do |resume|
       resume.unset('md5sum') if resume.md5sum
       resume.unset('resume_text') if resume.resume_text
       resume.unset('resume_grid_fs_id') if resume.resume_grid_fs_id

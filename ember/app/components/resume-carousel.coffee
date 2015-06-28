@@ -2,8 +2,7 @@
 
 ResumeCarouselComponent = Ember.Component.extend
   didInsertElement: ->
-    Ember.$('.carousel-inner div.item').first().addClass('active')
-    Ember.$('.carousel-inner li').first().addClass('active')
+    this.updateActives
 
     Ember.$('.carousel-indicators li').each (index, li) ->
       Ember.$(li).attr('data-slide-to', index)
@@ -17,5 +16,14 @@ ResumeCarouselComponent = Ember.Component.extend
 
     nextSlide: ->
       Ember.$('.carousel').carousel('next')
+
+  resumeObserver: ( ->
+    Ember.run.scheduleOnce('afterRender', this, this.updateActives)
+  ).observes('other_resumes')
+
+  updateActives: ->
+    Ember.$('.carousel-inner div.item').first().addClass('active')
+    Ember.$('.carousel-inner li').first().addClass('active')
+    Ember.$('.carousel-indicators li').first().addClass('active')
 
 `export default ResumeCarouselComponent`
