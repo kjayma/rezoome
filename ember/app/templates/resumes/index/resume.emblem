@@ -21,6 +21,6 @@ h4.resume
   |&nbsp; resumes on file
 
 .row
-  = resume-carousel other_resumes=model.otherResumes
+  = resume-carousel other_resumes=controller.other_resumes
 
 
