@@ -10,7 +10,7 @@ describeModel(
   'Resume',
   {
     // Specify the other units that are required for this test.
-      needs: []
+      needs: ['model:other-resume']
   },
   function() {
     // Replace this with your real tests.

@@ -8,7 +8,8 @@ ResumesIndex = Ember.Route.extend
       return item != "undefined" && item != ""
 
     if real_params.length == 0
-      alert("Please enter at least one search term - you would wait a long time if we don't narrow down the search!")
+      alertController = @.controllerFor('alert')
+      alertController.set('alert', ["Warning","Please enter at least one search term - you would wait a long time if we don't narrow down the search!"])
       transition.abort()
     else
       @store.find 'resume', params

@@ -18,6 +18,12 @@ nav.navbar.navbar-default.navbar-fixed-top
         li
           a href="jobs"
             |Jobs
+#flash
+  #bs-button class='close' data-dismiss='alert' aria-hidden='true' &times;
+  span.type
+    strong
+  '
+  span.message
 
 .container-fluid
   .rezoome
