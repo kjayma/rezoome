@@ -7,6 +7,7 @@ module API
       expose :_id, :as => :id
       expose :last_update
       expose :resume_text
+      expose :resume_grid_fs_id
       expose :created_at
       expose :updated_at
     end

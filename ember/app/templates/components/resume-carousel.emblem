@@ -14,7 +14,7 @@
               = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
             li
               button class="btn btn-primary btn-sm"
-                a href=model.resumeFileUrl Download Actual Resume
+                a href=resume.resumeFileUrl Download Actual Resume
 
           pre style="overflow-x: scroll;"
             resume.resumeText
