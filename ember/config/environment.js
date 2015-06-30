@@ -21,6 +21,9 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline'",
       'frame-src': "'self' http://kevin-u46e2:3000"
     },
+    flashMessageDefaults: {
+      timeout            : 5000
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
