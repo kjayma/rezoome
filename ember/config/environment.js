@@ -22,7 +22,7 @@ module.exports = function(environment) {
       'frame-src': "'self' http://kevin-u46e2:3000"
     },
     flashMessageDefaults: {
-      timeout            : 5000
+      timeout            : 15000
     },
 
     APP: {

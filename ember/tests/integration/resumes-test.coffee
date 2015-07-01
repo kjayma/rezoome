@@ -52,8 +52,9 @@ describe 'Integration - Resumes Page', ->
         expect(find('h4').text()).to.include "Candidates"
 
   it 'Should require at least one parameter', ->
-    visit('/resumes').then ->
-      expect(false)
+    visit('/').then ->
+      click('a:contains("Job Search")').then ->
+        expect(find('a#search').length).to.equal 1
 
   it 'Should list all resumes', ->
     visit('/resumes?state=NY').then ->
