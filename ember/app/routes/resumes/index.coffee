@@ -27,6 +27,16 @@ ResumesIndex = Ember.Route.extend
     queryParamsDidChange: ->
       @.refresh()
 
+    reset: ->
+      Ember.$('#state').val(null)
+      Ember.$('#location').val(null)
+      Ember.$('#radius').val(null)
+      Ember.$('#last_name').val(null)
+      Ember.$('#first_name').val(null)
+      Ember.$('#zip').val(null)
+      Ember.get(this, 'flashMessages').clearMessages()
+      @transitionTo('job-search')
+
     error: (error, transition) ->
       error_message = "Error: the search failed.  Try again or call support :)\n" + error.message
       Ember.get(this, 'flashMessages').danger(error_message)

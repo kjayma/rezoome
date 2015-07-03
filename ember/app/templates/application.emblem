@@ -19,7 +19,7 @@ nav.navbar.navbar-default.navbar-fixed-top
           a href="jobs"
             |Jobs
 #flash
-  each flash in flashMessages.queue
+  each flashMessages.queue as |flash|
     = flash-message flash=flash
 
 .container-fluid
