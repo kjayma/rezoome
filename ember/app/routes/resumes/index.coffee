@@ -12,7 +12,7 @@ ResumesIndex = Ember.Route.extend
       Ember.get(this, 'flashMessages').warning("Warning: Please enter at least one search term - you would wait a long time if we didn't narrow down the search!")
       transition.abort()
     else
-      @store.find 'resume', params
+      @store.query 'resume', params
 
   afterModel: (resumes) ->
     count = resumes.get('length')

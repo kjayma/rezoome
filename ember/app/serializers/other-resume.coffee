@@ -1,6 +1,6 @@
-`import DS from 'ember-data'`
+`import { ActiveModelSerializer } from 'active-model-adapter'`
 
-OtherResumeSerializer = DS.ActiveModelSerializer.extend DS.EmbeddedRecordsMixin,
+OtherResumeSerializer = ActiveModelSerializer.extend DS.EmbeddedRecordsMixin,
   emptyprop: ->
     console.log('got here')
 

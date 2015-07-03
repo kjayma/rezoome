@@ -1,6 +1,7 @@
-`import DS from 'ember-data'`
+#`import DS from 'ember-data'`
+`import { ActiveModelSerializer } from 'active-model-adapter'`
 
-ResumeSerializer = DS.ActiveModelSerializer.extend DS.EmbeddedRecordsMixin, attrs:
+ResumeSerializer = ActiveModelSerializer.extend DS.EmbeddedRecordsMixin, attrs:
   otherResumes: embedded: 'always'
 
 `export default ResumeSerializer`
