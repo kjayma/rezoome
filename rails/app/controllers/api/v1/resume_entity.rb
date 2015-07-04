@@ -23,6 +23,7 @@ module API
       expose :resume_grid_fs_id
       expose :created_at
       expose :updated_at
+      expose :distance
     end
   end
 end
