@@ -1,10 +1,12 @@
 `import Ember from 'ember'`
 
-ResumesIndexController = Ember.ArrayController.extend
+ResumesIndexController = Ember.Controller.extend
   queryParams: ['state', 'primary_email', 'last_name', 'first_name', 'location', 'radius', 'search_term']
-
-  resumeCount: ( ->
-    @.get('length')
-  ).property('model')
+  #state: null
+  #primary_email: null
+  #last_name: null
+  #first_name: null
+  #location: null
+  #radius: null
 
 `export default ResumesIndexController`

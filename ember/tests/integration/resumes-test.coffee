@@ -13,21 +13,27 @@ describe 'Integration - Resumes Page', ->
         id: 1
         lastName: "Roberts"
         firstName: "Dread"
+        state: "NY"
       },
       {
         id: 2
         lastName: "Coyote"
         firstName: "Wile E"
+        state: "NY"
       }
       {
         id: 3
         lastName: "Sam"
         firstName: "Yosemite"
+        state: "NY"
       }
     ]
     server = new Pretender ->
       @get '/api/v1/resumes', (request) ->
-        [200, {"Content-Type": "application/json"}, JSON.stringify {resumes: resumes}]
+        if request.queryParams.state == 'NY'
+          [200, {"Content-Type": "application/json"}, JSON.stringify {resumes: resumes}]
+        else
+          [200, {"Content-Type": "application/json"}, JSON.stringify {resumes: {}}]
 
       @get '/api/v1/resumes/:id', (request) ->
         resume = resumes.find ((resume) ->
@@ -52,12 +58,26 @@ describe 'Integration - Resumes Page', ->
         expect(find('h4').text()).to.include "Candidates"
 
   it 'Should require at least one parameter', ->
+    this.timeout(9000)
     visit('/').then ->
       click('a:contains("Job Search")').then ->
-        expect(find('a#search').length).to.equal 1
+        click('a:contains("Search Now")').then ->
+          expect(find('.alert.alert-warning').text()).to.match /at least one/
 
   it 'Should list all resumes', ->
+    this.timeout(9000)
     visit('/resumes?state=NY').then ->
-      expect(find('a:contains("Robert")').length).to.equal 1
-      expect(find('a:contains("Coyote")').length).to.equal 1
-      expect(find('a:contains("Sam")').length).to.equal 1
+      expect(find('.resume_list a').text()).to.include "Roberts"
+      expect(find('.resume_list a').text()).to.include "Coyote"
+      expect(find('.resume_list a').text()).to.include "Sam"
+
+  it 'should clear the search when clicking reset', ->
+    this.timeout(9000)
+    visit('/resumes?state=NY')
+    click('a:contains("Search Now")').then ->
+      expect(find('.resume_list a').text()).to.include "Roberts"
+    click('button:contains("Reset")').then ->
+      click('a:contains("Search Now")').then ->
+        expect(find('.resume_list a').text()).not.to.include "Roberts"
+
+

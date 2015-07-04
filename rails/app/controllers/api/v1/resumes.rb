@@ -45,7 +45,7 @@ module API
         params do
           optional :search_term, type: String, desc: "full text search terms seperated by | character for logical AND search"
           optional :location, type: String, desc: "lat long for location search"
-          optional :radius, type: Integer, desc: "search radius in miles"
+          optional :radius, type: String, desc: "search radius in miles"
           optional :primary_email, type: String, desc: "primary email used by candidate"
           optional :last_name, type: String, desc: "last name of candidate"
           optional :first_name, type: String, desc: "first name of candidate"
@@ -53,24 +53,35 @@ module API
         end
 
         get "", root: "resume" do
-          search_term = permitted_params[:search_term]
-          search_regex = API::V1::Resumes.parse_search(search_term) if permitted_params[:search_term]
           conditions = {}
-          conditions['other_resumes.resume_text'] = search_regex if search_term
+          if permitted_params[:search_term] && permitted_params[:search_term] != 'null'
+            search_term = permitted_params[:search_term]
+            search_regex = API::V1::Resumes.parse_search(search_term) if permitted_params[:search_term]
+            conditions['other_resumes.resume_text'] = search_regex if search_term
+          end
           permitted_params.each do |key, value|
             if
               key.to_s != 'search_term' &&
               key.to_s != 'location' &&
               key.to_s != 'radius' &&
               value != 'undefined' &&
+              value != 'null'
               !value.empty?
                 conditions[key] = value
             end
           end
 
           location = nil
-          if !permitted_params[:location].nil?
-            radius = (permitted_params[:radius] && !permitted_params[:radius].nil? ?  permitted_params[:radius].to_i : 200) / 3963.2
+          if !permitted_params[:location].nil? && permitted_params[:location] != "undefined" && permitted_params[:location] != "null"
+            if permitted_params[:radius] &&
+              !permitted_params[:radius].nil? &&
+              permitted_params[:radius] != "undefined" &&
+              permitted_params[:radius] != "null" &&
+              is_number?( permitted_params[:radius])
+              radius = permitted_params[:radius].to_i / 3963.2
+            else
+              radius = 200 / 3693.2
+            end
             loc = MultiGeocoder.geocode(permitted_params[:location])
             if loc.success
               location = [loc.lng, loc.lat]

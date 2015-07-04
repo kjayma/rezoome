@@ -3,7 +3,7 @@
     .results
       .center-text
         h5
-          = pluralize resumeCount "Result"
+          = pluralize model.length "Result"
 
       .row.resume_list
         = each model as |resume|

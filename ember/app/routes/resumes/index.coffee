@@ -5,7 +5,7 @@ ResumesIndex = Ember.Route.extend
     params_array = $.map params, (value, index) -> value
 
     real_params = params_array.filter (item) ->
-      return item != "undefined" && item != ""
+      return item != "undefined" && item != "" && item != null
 
     if real_params.length == 0
       Ember.get(this, 'flashMessages').clearMessages()
@@ -22,20 +22,9 @@ ResumesIndex = Ember.Route.extend
     else
       Ember.get(this, 'flashMessages').warning("Search completed but no matches found.")
 
-
   actions:
     queryParamsDidChange: ->
-      @.refresh()
-
-    reset: ->
-      Ember.$('#state').val(null)
-      Ember.$('#location').val(null)
-      Ember.$('#radius').val(null)
-      Ember.$('#last_name').val(null)
-      Ember.$('#first_name').val(null)
-      Ember.$('#zip').val(null)
-      Ember.get(this, 'flashMessages').clearMessages()
-      @transitionTo('job-search')
+      @refresh()
 
     error: (error, transition) ->
       error_message = "Error: the search failed.  Try again or call support :)\n" + error.message
