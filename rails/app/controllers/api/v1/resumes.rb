@@ -77,7 +77,7 @@ module API
               !permitted_params[:radius].nil? &&
               permitted_params[:radius] != "undefined" &&
               permitted_params[:radius] != "null" &&
-              is_number?( permitted_params[:radius])
+              (permitted_params[:radius]) =~ /\A\d+?(\.\d+)\Z/
               radius = permitted_params[:radius].to_i / 3963.2
             else
               radius = 200 / 3693.2
