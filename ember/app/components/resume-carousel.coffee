@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
 
 ResumeCarouselComponent = Ember.Component.extend
+
   didInsertElement: ->
     this.updateActives
 
@@ -25,5 +26,15 @@ ResumeCarouselComponent = Ember.Component.extend
     Ember.$('.carousel-inner div.item').first().addClass('active')
     Ember.$('.carousel-inner li').first().addClass('active')
     Ember.$('.carousel-indicators li').first().addClass('active')
+    console.log('got here')
+    @highlightSearchTerms()
+
+  highlightSearchTerms: ->
+    search_terms = @get('search_terms')
+    pre = Ember.$('pre')
+    search_terms.split("\n").forEach (term) ->
+      highlighted_term = '<span class="highlight">'+term+'</span>'
+      regEx = new RegExp(term, "ig")
+      pre.html(pre.html().replace(regEx, highlighted_term))
 
 `export default ResumeCarouselComponent`

@@ -101,7 +101,7 @@ module API
       end
 
       def self.parse_search(search_term)
-        terms_components = search_term.split('|').map{ |term| "(?=.*#{term})" }.join("")
+        terms_components = search_term.split("\n").map{ |term| "(?=.*#{term})" }.join("")
         /#{terms_components}.*/im
       end
     end
