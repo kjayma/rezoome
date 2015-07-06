@@ -65,6 +65,7 @@ module API
               key.to_s != 'location' &&
               key.to_s != 'radius' &&
               value != 'undefined' &&
+              value != ""
               value != 'null'
               !value.empty?
                 conditions[key] = value
@@ -92,7 +93,9 @@ module API
                 r['id'] = r._id
                 r.distance = r['geo_near_distance']
               end
-            present resumes, with: API::V1::ResumeEntity
+            search_location = [{id: "1", coordinates: location}]
+            present :resumes, resumes, with: API::V1::ResumeEntity
+            present :search_location, search_location
           elsif conditions && conditions != {}
             resumes = Resume.without(:resume_text).where(conditions)
             present resumes, with: API::V1::ResumeEntity

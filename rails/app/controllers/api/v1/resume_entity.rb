@@ -15,6 +15,7 @@ module API
       expose :city
       expose :state
       expose :zip
+      expose :location
       expose :home_phone
       expose :mobile_phone
       expose :doctype

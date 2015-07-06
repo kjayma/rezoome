@@ -1,4 +1,6 @@
 `import Ember from 'ember'`
+`import DS from 'ember-data'`
+
 
 ResumesIndex = Ember.Route.extend
   model: (params, transition) ->
@@ -12,11 +14,24 @@ ResumesIndex = Ember.Route.extend
       Ember.get(this, 'flashMessages').warning("Warning: Please enter at least one search term - you would wait a long time if we didn't narrow down the search!")
       transition.abort()
     else
-      @store.query 'resume', params
+      store = @store
+      @store.query('resume', params).then (resumes) ->
+        return {
+          resumes: resumes
+          searchLocation: do ->
+            loc = []
+            store.all('search-location').forEach (location) ->
+              loc = location.get('coordinates')
+            return {lat: loc[1], lng: loc[0]}
+        }
 
-  afterModel: (resumes) ->
-    count = resumes.get('length')
+  setupController: (controller, model) ->
+    @._super(controller,model)
+
+  afterModel: (model) ->
+    count = model.resumes.get('length')
     Ember.get(this, 'flashMessages').clearMessages()
+    console.log(model.searchLocation)
     if count > 0
       Ember.get(this, 'flashMessages').info("Search completed successfully - " + count + ' results found.')
     else

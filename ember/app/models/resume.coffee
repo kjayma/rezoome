@@ -12,6 +12,7 @@ Resume = DS.Model.extend
   city: DS.attr('string')
   state: DS.attr('string')
   zip: DS.attr('string')
+  location: DS.attr()
   homePhone: DS.attr('string')
   mobilePhone: DS.attr('string')
   doctype: DS.attr('string')
@@ -25,6 +26,9 @@ Resume = DS.Model.extend
   fullName: ( ->
     @get('firstName') + ' ' + @get('lastName')
   ).property('firstName', 'lastName')
+  title: ( ->
+    @get('fullName')
+  ).property('fullName')
   resumeTextUrl: ( ->
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')
@@ -40,5 +44,11 @@ Resume = DS.Model.extend
   resumesOnFile: ( ->
     @get('otherResumes').length
   ).property('otherResumes')
+  lat: ( ->
+    @get('location')[1]
+  ).property('location')
+  lng: ( ->
+    @get('location')[0]
+  ).property('location')
 
 `export default Resume`

@@ -3,24 +3,43 @@
     .results
       .center-text
         h5
-          = pluralize model.length "Result"
+          = pluralize model.resumes.length "Result"
 
-      .row.resume_list
-        = each model as |resume|
-          .col-md-3
-            = link-to 'resumes.index.resume' resume class="btn btn-info btn-sm"
-              = resume.lastName
-              ' ,
-              = resume.firstName
-              ' &nbsp;(
-              = resume.city
-              ' ,
-              = resume.state
-              if resume.distance
-                ' &nbsp;-
-                = distance-in-miles resume.distance
-                | &nbsp; miles
-
-              ' &nbsp;)
+      .row
+        if controller.isLocationSearch
+          .col-md-6.resume_list
+            = each model.resumes as |resume|
+              .col-md-6
+                = link-to 'resumes.index.resume' resume class="btn btn-info btn-sm"
+                  = resume.lastName
+                  ' ,
+                  = resume.firstName
+                  ' &nbsp;(
+                  = resume.city
+                  ' ,
+                  = resume.state
+                  if resume.distance
+                    ' &nbsp;-
+                    = distance-in-miles resume.distance
+                    | &nbsp; miles
+                  ' &nbsp;)
+          .col-md-6
+            = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=7  markers=model.resumes
+        else
+          = each model as |resume|
+            .col-md-3
+              = link-to 'resumes.index.resume' resume class="btn btn-info btn-sm"
+                = resume.lastName
+                ' ,
+                = resume.firstName
+                ' &nbsp;(
+                = resume.city
+                ' ,
+                = resume.state
+                if resume.distance
+                  ' &nbsp;-
+                  = distance-in-miles resume.distance
+                  | &nbsp; miles
+                ' &nbsp;)
 
       outlet

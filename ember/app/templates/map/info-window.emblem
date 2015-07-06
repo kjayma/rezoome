@@ -1,0 +1,13 @@
+strong
+  = lastName
+p
+  = body
+p
+  Coordinates
+  br
+  small
+    code
+      = location.lat
+    code
+      = location.lng
+

@@ -13,7 +13,7 @@ ResumesIndexResumeController = Ember.Controller.extend
   search_terms: (->
     resumes_index_controller = @get('controllers.resumes/index')
     resumes_index_controller.get('search_term')
-  ).property()
+  ).property('model')
 
 
 `export default ResumesIndexResumeController`
