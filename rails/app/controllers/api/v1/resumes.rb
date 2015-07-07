@@ -74,11 +74,14 @@ module API
 
           location = nil
           if !permitted_params[:location].nil? && permitted_params[:location] != "undefined" && permitted_params[:location] != "null"
+            p 'in location'
+            p "radius #{permitted_params[:radius] =~ /\A\d+?(\.\d+)\Z/}"
             if permitted_params[:radius] &&
               !permitted_params[:radius].nil? &&
               permitted_params[:radius] != "undefined" &&
               permitted_params[:radius] != "null" &&
-              (permitted_params[:radius]) =~ /\A\d+?(\.\d+)\Z/
+              permitted_params[:radius] =~ /\A\d+(\.\d+)?\Z/
+              p 'got here'
               radius = permitted_params[:radius].to_i / 3963.2
             else
               radius = 200 / 3693.2
