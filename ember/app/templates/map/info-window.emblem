@@ -1,13 +1,2 @@
 strong
   = title
-p
-  = body
-p
-  Coordinates
-  br
-  small
-    code
-      = lat
-    code
-      = lng
-
