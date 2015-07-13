@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
 
 ResumesIndexIndexController = Ember.Controller.extend
+  zoom: 7
 
   actions:
     any: ->

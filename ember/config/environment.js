@@ -17,7 +17,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' http://kevin-u46e2:35729 *.googleapis.com maps.gstatic.com",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self' ws://kevin-u46e2:35729 http://kevin-u46e2:3000 maps.gstatic.com",
-      'img-src': "'self'  *.googleapis.com maps.gstatic.com csi.gstatic.com",
+      'img-src': "'self'  maps.google.com *.googleapis.com maps.gstatic.com csi.gstatic.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com",
       'frame-src': "'self' http://kevin-u46e2:3000"
     },

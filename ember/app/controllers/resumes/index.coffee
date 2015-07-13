@@ -8,6 +8,7 @@ ResumesIndexController = Ember.Controller.extend
   first_name: null
   location: null
   radius: null
+  zoom: 7
 
   isLocationSearch: (->
     state = @get('state')

@@ -24,7 +24,12 @@
                     | &nbsp; miles
                   ' &nbsp;)
           .col-md-6
-            = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=7  markers=model.resumes markerInfoWindowTemplateName='map/info-window'
+            = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=zoom   markerInfoWindowTemplateName='map/info-window' markers=model.resumes
+
+            .controls
+              label
+                'Zoom:
+                = input type="range" value=zoom min=0 max=18 step=1
         else
           = each model as |resume|
             .col-md-3
