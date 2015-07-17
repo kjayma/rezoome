@@ -31,7 +31,7 @@
                 'Zoom:
                 = input type="range" value=zoom min=0 max=18 step=1
         else
-          = each model as |resume|
+          = each model.resumes as |resume|
             .col-md-3
               = link-to 'resumes.index.resume' resume class="btn btn-info btn-sm"
                 = resume.lastName

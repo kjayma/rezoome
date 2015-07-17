@@ -4,6 +4,7 @@ module API
     class Resumes < Grape::API
       require 'mongoid/grid_fs'
       require 'geokit'
+      require 'yomu'
 
       include API::V1::Defaults
       include Geokit::Geocoders
@@ -40,6 +41,32 @@ module API
           grid_fs.get(permitted_params[:resume_grid_fs_id]).data
         end
 
+        desc "post a resume file in json base64"
+
+        params do
+          requires :id, type: String, desc: "ID of the resume"
+          requires :data
+        end
+
+        post "/resume_content" do
+          Rails.logger.debug 'got here'
+          id = permitted_params[:id]
+          content = permitted_params[:data]
+          md5sum = Digest::MD5.hexdigest content
+          resume_text = Yomu.read :text, content
+          resume = Resume.find(id)
+          if resume
+            resume.other_resumes.create!(
+              resume_text: resume_text,
+              md5sum: md5sum,
+              last_update: Time.now,
+              resume_grid_fs_id: grid_file_id(content)
+            )
+          else
+            "error"
+          end
+        end
+
         desc "return some resumes"
 
         params do
@@ -73,42 +100,50 @@ module API
           end
 
           location = nil
-          if !permitted_params[:location].nil? && permitted_params[:location] != "undefined" && permitted_params[:location] != "null"
-            p 'in location'
-            p "radius #{permitted_params[:radius] =~ /\A\d+?(\.\d+)\Z/}"
+          coordinates = [nil,nil]
+          if !permitted_params[:location].nil? && permitted_params[:location] != "undefined" && permitted_params[:location] != "null" && !permitted_params[:location].blank?
+            location = permitted_params[:location]
             if permitted_params[:radius] &&
               !permitted_params[:radius].nil? &&
               permitted_params[:radius] != "undefined" &&
               permitted_params[:radius] != "null" &&
               permitted_params[:radius] =~ /\A\d+(\.\d+)?\Z/
-              p 'got here'
               radius = permitted_params[:radius].to_i / 3963.2
             else
               radius = 200 / 3693.2
             end
-            loc = MultiGeocoder.geocode(permitted_params[:location])
+            loc = MultiGeocoder.geocode(location)
             if loc.success
-              location = [loc.lng, loc.lat]
+              coordinates = [loc.lng, loc.lat]
+            end
+          elsif conditions.has_key? 'state'
+            loc = MultiGeocoder.geocode(conditions['state'])
+            if loc.success
+              coordinates = [loc.lng, loc.lat]
             end
           end
           if !location.nil?
-            resumes = Resume.where(conditions).geo_near(location).max_distance(radius).spherical.each do |r|
+            resumes = Resume.where(conditions).geo_near(coordinates).max_distance(radius).spherical.each do |r|
                 r['id'] = r._id
                 r.distance = r['geo_near_distance']
               end
-            search_location = [{id: "1", coordinates: location}]
-            present :resumes, resumes, with: API::V1::ResumeEntity
-            present :search_location, search_location
           elsif conditions && conditions != {}
             resumes = Resume.without(:resume_text).where(conditions)
-            present resumes, with: API::V1::ResumeEntity
           end
+          search_location = [{id: "1", coordinates: coordinates}]
+          present :resumes, resumes, with: API::V1::ResumeEntity
+          present :search_location, search_location
         end
       end
 
       def self.parse_search(search_term)
         terms_components = search_term.split("\n").map{ |term| "(?=.*#{term})" }.join("")
         /#{terms_components}.*/im
+      end
+
+      def grid_file_id(file)
+        grid_fs = Mongoid::GridFs
+        grid_fs.put(file).id
       end
     end
 

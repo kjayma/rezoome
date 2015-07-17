@@ -8,12 +8,15 @@ ResumesIndexController = Ember.Controller.extend
   first_name: null
   location: null
   radius: null
-  zoom: 7
 
   isLocationSearch: (->
     state = @get('state')
     location = @get('location')
-    if (location != undefined && location != 'null') || (state != undefined && state != 'null')
+    if (location != 'undefined' && location != 'null' && location != undefined && location != null)
+      @set('zoom', 7)
+      true
+    else if (state != 'undefined' && state != 'null' & state != undefined && state != null)
+      @set('zoom', 5)
       true
     else
       false
