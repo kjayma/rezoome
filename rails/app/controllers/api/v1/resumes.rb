@@ -3,6 +3,7 @@ module API
 
     class Resumes < Grape::API
       require 'mongoid/grid_fs'
+      require 'stringio'
       require 'geokit'
       require 'yomu'
 
@@ -49,18 +50,18 @@ module API
         end
 
         post "/resume_content" do
-          Rails.logger.debug 'got here'
           id = permitted_params[:id]
           content = permitted_params[:data]
-          md5sum = Digest::MD5.hexdigest content
+          md5sum = Digest::MD5.hexdigest content.to_s
           resume_text = Yomu.read :text, content
+          fake_file = StringIO.new(content)
           resume = Resume.find(id)
           if resume
             resume.other_resumes.create!(
               resume_text: resume_text,
               md5sum: md5sum,
               last_update: Time.now,
-              resume_grid_fs_id: grid_file_id(content)
+              resume_grid_fs_id: API::V1::Resumes.grid_file_id(fake_file)
             )
           else
             "error"
@@ -141,7 +142,7 @@ module API
         /#{terms_components}.*/im
       end
 
-      def grid_file_id(file)
+      def self.grid_file_id(file)
         grid_fs = Mongoid::GridFs
         grid_fs.put(file).id
       end
