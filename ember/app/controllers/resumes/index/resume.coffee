@@ -36,6 +36,11 @@ ResumesIndexResumeController = Ember.Controller.extend
       console.log('in controller destroy other resume')
       resume = @get('model')
       resume.get('otherResumes').removeObject(otherResume)
-      resume.save()
+
+      adapterfor = @store.adapterFor('application')
+      host = document.location.host.replace(/\:4200/,':3000')
+      #namespace = adapterfor.namespace
+      url = 'http://' + host + '/api/v1' + '/resumes/' + resume.id + '/other_resumes/' + otherResume.id
+      jQuery.ajax(url, method: "DELETE")
 
 `export default ResumesIndexResumeController`

@@ -69,6 +69,21 @@ module API
           end
         end
 
+        desc "delete a resume file"
+
+        params do
+          requires :id, type: String, desc: "ID of the resume"
+          requires :other_resume_id, type: String, desc: "Other Resume Id"
+        end
+
+        delete ":id/other_resumes/:other_resume_id", root: "resumes" do
+          id = permitted_params[:id]
+          other_resume_id = permitted_params[:other_resume_id]
+          resume = Resume.find(id)
+          other_resume = resume.other_resumes.find(other_resume_id)
+          other_resume.destroy
+        end
+
         desc "put a complete resume"
 
         params do
