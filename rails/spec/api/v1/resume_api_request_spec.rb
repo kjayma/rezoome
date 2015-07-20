@@ -9,9 +9,13 @@ describe "API::V1::Resumes" do
 
 
     before do
-      post "/api/v1/resumes/resume_content", {
-        id: resume.id,
-        data:  Base64.encode64(resume_file.read)
+      post "/api/v1/resumes/#{resume.id}/resume_content", {
+        file: {
+          head: resume_file.content_type,
+          filename: resume_file.original_filename,
+          name: 'file',
+          tempfile: Base64.encode64(resume_file.read)
+        }
       }
     end
 

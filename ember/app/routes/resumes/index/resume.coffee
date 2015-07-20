@@ -18,5 +18,11 @@ ResumesIndexResumeRoute = Ember.Route.extend
       resume.set('zIndex', @zIndexCurrent)
       true
 
+    destroyOtherResume: (otherResumeId) ->
+      console.log('in route destroy other resume')
+      otherResume = @get('model.other_resumes').find(otherResumeId)
+      console.log(otherResume)
+      otherResume.destroyRecord().then ->
+        controller.transitionToRoute('resumes.index.resume')
 
 `export default ResumesIndexResumeRoute`

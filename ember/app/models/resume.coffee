@@ -57,4 +57,12 @@ Resume = DS.Model.extend
     @get('location')[0]
   ).property('location')
 
+  resumeUploadUrl: ( ->
+    adapterfor = @store.adapterFor('application')
+    host = document.location.host.replace(/\:4200/,':3000')
+    namespace = adapterfor.namespace
+    'http://' + host + '/' + namespace + '/resumes/' + @get('id') +
+    '/resume_content'
+  ).property('id')
+
 `export default Resume`

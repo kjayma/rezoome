@@ -1,26 +1,36 @@
 h4.resume
   = model.fullName
 .row
-  = model.filename
-.row
-  = model.primaryEmail
-.row
-  = model.address1
-.row
-  = model.address2
-.row
-  = model.city
-  ' ,
-  = model.state
-  | &nbsp;
-  =model.zip
-.row
-  = model.fullName
-  '&nbsp;has
-  = model.resumesOnFile
-  |&nbsp; resumes on file
+  .col-md-6
+    .row
+      = model.filename
+    .row
+      = model.primaryEmail
+    .row
+      = model.address1
+    .row
+      = model.address2
+    .row
+      = model.city
+      ' ,
+      = model.state
+      | &nbsp;
+      =model.zip
+    .row
+      = model.fullName
+      '&nbsp;has
+      = model.resumesOnFile
+      |&nbsp; resumes on file
+  .col-md-2.col-md-offset-2
+    br
+    .upload_buttons
+      .input-group
+        span.input-group-btn
+          .btn.btn-info.btn-file-uploader
+            = upload_button
+            file-upload url=model.resumeUploadUrl uploadFailed="uploadFailed" uploadSucceeded="uploadSucceeded" uploadStarted="uploadStarted"
 
 .row
-  = resume-carousel other_resumes=controller.other_resumes search_terms=controller.search_terms
+  = resume-carousel other_resumes=controller.other_resumes search_terms=controller.search_terms resumes_on_file=model.resumesOnFile destroyOtherResume="destroyOtherResume"
 
 

@@ -46,15 +46,15 @@ module API
 
         params do
           requires :id, type: String, desc: "ID of the resume"
-          requires :data
+          requires :file
         end
 
-        post "/resume_content" do
+        post ":id/resume_content", root: "resume" do
           id = permitted_params[:id]
-          content = permitted_params[:data]
-          md5sum = Digest::MD5.hexdigest content.to_s
-          resume_text = Yomu.read :text, content
-          fake_file = StringIO.new(content)
+          content = permitted_params[:file]
+          md5sum = Digest::MD5.hexdigest content.tempfile.to_s
+          resume_text = Yomu.new(content.tempfile).text
+          fake_file = content.tempfile
           resume = Resume.find(id)
           if resume
             resume.other_resumes.create!(
@@ -64,8 +64,33 @@ module API
               resume_grid_fs_id: API::V1::Resumes.grid_file_id(fake_file)
             )
           else
+            Rails.logger.warn "error - resume not found, id: #{id}"
             "error"
           end
+        end
+
+        desc "put a complete resume"
+
+        params do
+          requires :resume
+        end
+
+        put ":id/resume", root: "resume" do
+          p "resume params = #{permitted_params[:resume]}"
+          resume = Resume.find(permitted_params[:resume]['id'])
+          p "go there with resume #{resume.id}"
+        end
+
+        desc "return a resume"
+
+        params do
+          requires :id, type: String, desc: "ID of the resume"
+        end
+
+        get ":id" do
+          id = permitted_params[:id]
+          resume = [Resume.find_by(:id => params[:id])]
+          present :resume, resume, with: API::V1::ResumeEntity
         end
 
         desc "return some resumes"
