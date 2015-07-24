@@ -87,13 +87,20 @@ module API
         desc "put a complete resume"
 
         params do
-          requires :resume
+          requires :id, type: String, desc: "ID of the resume"
+          optional :resume
         end
 
-        put ":id/resume", root: "resume" do
-          p "resume params = #{permitted_params[:resume]}"
-          resume = Resume.find(permitted_params[:resume]['id'])
-          p "go there with resume #{resume.id}"
+        put ":id", root: "resumes" do
+          resume = Resume.find(permitted_params[:id])
+          if resume
+            resume_params = permitted_params[:resume].to_hash
+            other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
+            resume_params['other_resumes'] = other_resume_params
+            resume.update(resume_params)
+          else
+            "error - resume cannot be found"
+          end
         end
 
         desc "return a resume"

@@ -13,8 +13,7 @@
               | Last Updated: &nbsp;
               = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
             li
-              button class="btn btn-primary btn-sm"
-                a href=resume.resumeFileUrl Download Actual Resume
+              a.btn.btn-primary.btn-sm href=resume.resumeFileUrl Download Actual Resume
               |&nbsp;
               button{action "destroyOtherResume" resume} class="btn btn-primary btn-sm"
                 |Remove Resume
