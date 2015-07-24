@@ -35,13 +35,6 @@ Resume = DS.Model.extend
     'http://' + host + '/' + namespace + '/resumes/textfiles/' + @get('id')
   ).property('id')
 
-  resumeFileUrl: ( ->
-    adapterfor = @store.adapterFor('application')
-    host = document.location.host.replace(/\:4200/,':3000')
-    namespace = adapterfor.namespace
-    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resume_grid_fs_id') + '?filename=' + @get('fullName') + '.' + @get('doctype')
-  ).property('resume_grid_fs_id', 'fullName', 'doctype')
-
   resumesOnFile: ( ->
     @get('otherResumes').length
   ).property('otherResumes')
