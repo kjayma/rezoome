@@ -25,4 +25,8 @@ ResumesIndexResumeRoute = Ember.Route.extend
       otherResume.destroyRecord().then ->
         controller.transitionToRoute('resumes.index.resume')
 
+    putResume: (model) ->
+      console.log('in put')
+      model.save()
+
 `export default ResumesIndexResumeRoute`
