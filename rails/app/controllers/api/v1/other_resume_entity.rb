@@ -6,6 +6,8 @@ module API
       # _id will be exposed through class inheritance
       expose :_id, :as => :id
       expose :last_update
+      expose :doctype
+      expose :filename
       expose :resume_text
       expose :resume_grid_fs_id
       expose :created_at

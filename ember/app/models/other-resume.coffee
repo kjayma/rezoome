@@ -5,10 +5,12 @@ OtherResume = DS.Model.extend
   resumeText: DS.attr('string')
   resumeGridFsId: DS.attr('string')
   resume: DS.belongsTo('Resume')
+  doctype: DS.attr('string')
+  filename: DS.attr('string')
   resumeFileUrl: ( ->
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')
     namespace = adapterfor.namespace
-    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resumeGridFsId') + '?filename=' + @get('resume.firstName') + '_' + @get('resume.lastName') + '.' + @get('resume').get('doctype')
-  ).property('resumeGridFsId','resume')
+    'http://' + host + '/' + namespace + '/resumes/files/' + @get('resumeGridFsId') + '?filename=' + @get('filename') + '&extension=' + @get('doctype')
+  ).property('resumeGridFsId')
 `export default OtherResume`

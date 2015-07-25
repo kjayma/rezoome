@@ -29,9 +29,8 @@ h4.resume
           .btn.btn-info.btn-file-uploader
             = upload_button
             file-upload url=model.resumeUploadUrl uploadFailed="uploadFailed" uploadSucceeded="uploadSucceeded" uploadStarted="uploadStarted"
-          = bs-button value=model action="putResume" |put
+          = bs-button value='madsfasd' action="putResume" |put
 
 .row
   = resume-carousel other_resumes=controller.other_resumes search_terms=controller.search_terms resumes_on_file=model.resumesOnFile destroyOtherResume="destroyOtherResume"
-
 
