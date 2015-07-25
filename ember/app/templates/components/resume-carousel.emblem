@@ -10,12 +10,16 @@
           ul
             li
               h4
+              = resume.filename
+              if resume.filename
+               ':
               | Last Updated: &nbsp;
               = formatted-date resume.lastUpdate 'MMMM Do, YYYY [at] h:mm a'
             li
-              a.btn.btn-primary.btn-sm href=resume.resumeFileUrl Download Actual Resume
+              a.btn.btn-primary.btn-sm href=resume.resumeFileUrl _target='blank'
+                |Download Actual Resume
               |&nbsp;
-              button{action "destroyOtherResume" resume} class="btn btn-primary btn-sm"
+              bs-button action="destroyOtherResume" value=resume class="btn btn-primary btn-sm"
                 |Remove Resume
 
           pre style="overflow-x: scroll;"

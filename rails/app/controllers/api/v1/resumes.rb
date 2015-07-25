@@ -31,11 +31,21 @@ module API
         params do
           requires :resume_grid_fs_id, type: String, desc: "ID of the resume file"
           optional :filename, type: String, desc: "preferred filename"
+          optional :extension, type: String, desc: "extension"
         end
 
         get "files/:resume_grid_fs_id", root: "resume" do
-          content_type 'application/octet-stream'
-          header['content-Disposition'] = "attachment; filename='#{permitted_params[:filename]}'"
+          case params[:extension]
+          when 'pdf'
+            content_type 'application/pdf'
+          when 'doc'
+            content_type 'application/msword'
+          when 'docx'
+            content_type 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+          else
+            content_type 'application/octet-stream'
+          end
+          header['content-Disposition'] = "attachment; filename=#{permitted_params[:filename]}"
           env['api.format'] = :binary
 
           grid_fs = Mongoid::GridFs
@@ -55,10 +65,13 @@ module API
           md5sum = Digest::MD5.hexdigest content.tempfile.to_s
           resume_text = Yomu.new(content.tempfile).text
           fake_file = content.tempfile
+          extension = $1 if content.filename.match(/\.(.*)/)
           resume = Resume.find(id)
           if resume
             resume.other_resumes.create!(
               resume_text: resume_text,
+              doctype: extension,
+              filename: content.filename,
               md5sum: md5sum,
               last_update: Time.now,
               resume_grid_fs_id: API::V1::Resumes.grid_file_id(fake_file)
