@@ -107,9 +107,16 @@ module API
         put ":id", root: "resumes" do
           resume = Resume.find(permitted_params[:id])
           if resume
-            resume_params = permitted_params[:resume].to_hash
-            other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
-            resume_params['other_resumes'] = other_resume_params
+            resume_params = permitted_params[:resume].to_hash.except('other_resumes')
+            address = permitted_params[:resume][:address1]
+            city = permitted_params[:resume][:city]
+            state = permitted_params[:resume][:state]
+            zip = permitted_params[:resume][:zip]
+            loc = API::V1::Resumes.geocode(address, city, state, zip)
+            resume_params['location'] = loc if loc
+            p "location is #{loc}"
+            #other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
+            #resume_params['other_resumes'] = other_resume_params
             resume.update(resume_params)
           else
             "error - resume cannot be found"
@@ -194,6 +201,18 @@ module API
           search_location = [{id: "1", coordinates: coordinates}]
           present :resumes, resumes, with: API::V1::ResumeEntity
           present :search_location, search_location
+        end
+      end
+
+      def self.geocode(address1=nil, city=nil, state=nil, zip=nil)
+        loc = MultiGeocoder.geocode("#{address1}, #{city}, #{state} #{zip}")
+        unless loc.success
+          loc = MultiGeocoder.geocode(zip)
+        end
+        if loc.success
+          [loc.lng, loc.lat]
+        else
+          nil
         end
       end
 

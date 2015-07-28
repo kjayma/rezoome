@@ -1,3 +1,47 @@
 h3 People
 
-| Add, edit, and delete job searchers/resumes goes here
+.row
+  .col-md-1
+    |Search and edit go here
+  .col-md-10
+    em-form model=model submit_button=false
+      .row
+        .col-md-3
+          em-input property="firstName" label="First Name"
+        .col-md-4
+          em-input property="lastName" label="Last Name"
+        .col-md-5
+          em-input property="primaryEmail" label="Primary Email Address"
+      .row
+        .col-md-12
+          em-input property="address1" label="Address1"
+          em-input property="address2" label="Address2"
+      .row
+        .col-md-8
+          em-input property="city" label="City"
+        .col-md-1
+          em-input property="state" label="State"
+        .col-md-3
+          em-input property="zip" label="Zip"
+      .row
+        .col-md-6
+          em-input property="homePhone" label="Home Phone"
+        .col-md-6
+          em-input property="mobilePhone" label="Mobile Phone"
+      .row
+        .col-md-12
+          em-text property="notes" label="Notes" rows=3
+
+      .row
+        .col-md-4
+        .col-md-2
+          = input disabled=isntValid type="submit" class="btn btn-info btn-sm" value="Add Candidate"
+        .col-md-2
+          .upload_buttons
+            .input-group
+              span.input-group-btn
+                .btn.btn-info.btn-file-uploader
+                  = upload_button
+                  file-upload url=model.resumeUploadUrl uploadFailed="uploadFailed" uploadSucceeded="uploadSucceeded" uploadStarted="uploadStarted"
+        .col-md-4
+    .col-md-1

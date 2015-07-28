@@ -4,18 +4,20 @@ h4.resume
   .col-md-6
     .row
       = model.filename
-    .row
-      = model.primaryEmail
-    .row
-      = model.address1
-    .row
-      = model.address2
-    .row
-      = model.city
-      ' ,
-      = model.state
-      | &nbsp;
-      =model.zip
+    em-form form_layout="inline" model=model submit_button=false
+      .row
+        = em-input property="firstName" placeholder="firstName"
+        = em-input property="lastName" placeholder="lastName"
+        = em-input property="primaryEmail" placeholder="Primary Email"
+      .row
+        = em-input property="address1" placeholder="Address1"
+        = em-input property="address2" placeholder="Address2"
+      .row
+        = em-input property="city" placeholder="City"
+        = em-input property="state" placeholder="State"
+        = em-input property="zip" placeholder="Zip"
+      .row
+        = input disabled=isntValid type="submit" class="btn btn-info btn-sm" value="Update Profile"
     .row
       = model.fullName
       '&nbsp;has
@@ -23,13 +25,14 @@ h4.resume
       |&nbsp; resumes on file
   .col-md-2.col-md-offset-2
     br
+    br
+    br
     .upload_buttons
       .input-group
         span.input-group-btn
           .btn.btn-info.btn-file-uploader
             = upload_button
             file-upload url=model.resumeUploadUrl uploadFailed="uploadFailed" uploadSucceeded="uploadSucceeded" uploadStarted="uploadStarted"
-          = bs-button value='madsfasd' action="putResume" |put
 
 .row
   = resume-carousel other_resumes=controller.other_resumes search_terms=controller.search_terms resumes_on_file=model.resumesOnFile destroyOtherResume="destroyOtherResume"
