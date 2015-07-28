@@ -43,4 +43,18 @@ ResumesIndexResumeController = Ember.Controller.extend
       url = 'http://' + host + '/api/v1' + '/resumes/' + resume.id + '/other_resumes/' + otherResume.id
       jQuery.ajax(url, method: "DELETE")
 
+    submit: ->
+      self = @
+      @get('model').save().then(self.alertSuccess(@get('model'),self)).fail(self.alertFail)
+
+  alertSuccess: (model) ->
+    message = 'saved changes to ' + model.get('fullName') + "'s profile"
+    Ember.get(this, 'flashMessages').clearMessages()
+    Ember.get(this, 'flashMessages').success(message)
+
+  alertFail: (reason, self) ->
+    Ember.get(self, 'flashMessages').clearMessages()
+    Ember.get(self, 'flashMessages').danger("Error: the profile could not be saved: " + reason)
+
+
 `export default ResumesIndexResumeController`
