@@ -31,7 +31,6 @@ ResumesIndex = Ember.Route.extend
   afterModel: (model) ->
     count = model.resumes.get('length')
     Ember.get(this, 'flashMessages').clearMessages()
-    console.log(model.searchLocation)
     if count > 0
       Ember.get(this, 'flashMessages').info("Search completed successfully - " + count + ' results found.')
     else
@@ -45,5 +44,9 @@ ResumesIndex = Ember.Route.extend
       error_message = "Error: the search failed.  Try again or call support :)\n" + error.message
       Ember.get(this, 'flashMessages').danger(error_message)
       @transitionTo('job-search')
+
+    switchResume: (target) ->
+      resume = target.get('controller.model')
+      @transitionTo('resumes.index.resume', resume )
 
 `export default ResumesIndex`

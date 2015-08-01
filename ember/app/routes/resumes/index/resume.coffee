@@ -12,10 +12,10 @@ ResumesIndexResumeRoute = Ember.Route.extend
 
   actions:
     willTransition: (transition) ->
-      console.log('transition?')
       resume = @controller.get('model')
       resume.set('icon', @iconCurrent)
       resume.set('zIndex', @zIndexCurrent)
+      resume.set('isInfoWindowVisible', false)
       true
 
     putResume: (model) ->

@@ -24,7 +24,7 @@
                     | &nbsp; miles
                   ' &nbsp;)
           .col-md-6
-            = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=zoom   markerInfoWindowTemplateName='map/info-window' markers=model.resumes
+            = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=zoom markerInfoWindowTemplateName='map/info-window' markers=model.resumes markerViewClass='map/marker' markerControllerClass='map/marker'
 
             .controls
               label
