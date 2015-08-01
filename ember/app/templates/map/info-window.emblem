@@ -1,2 +1,6 @@
 strong
   = title
+div
+  = model.city
+  ',
+  = model.state
