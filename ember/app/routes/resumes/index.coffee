@@ -47,6 +47,10 @@ ResumesIndex = Ember.Route.extend
 
     switchResume: (target) ->
       resume = target.get('controller.model')
+      target_div = Ember.$("a[href^='/resumes/"+resume.id+"']").parent()
+      console.log(target_div.position().top)
+      list = Ember.$('.resume_list')
+      list.scrollTop(list.scrollTop() + target_div.position().top - list.height()/2 + target_div.height()/2 )
       @transitionTo('resumes.index.resume', resume )
 
 `export default ResumesIndex`
