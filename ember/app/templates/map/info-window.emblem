@@ -1,6 +1,8 @@
 strong
   = title
 div
+  = model.currentJob
+div
   = model.city
   ',
   = model.state
