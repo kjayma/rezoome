@@ -28,6 +28,27 @@ Resume = DS.Model.extend
     @get('fullName')
   ).property('fullName')
 
+  currentJob:
+    Ember.computed 'otherResumes.resumeText', ->
+      otherResumesSorted = Ember.ArrayProxy.createWithMixins Ember.SortableMixin,
+        sortAscending: false
+        sortProperties: ['lastUpdate']
+        content: @get('otherResumes')
+      latest_resume = otherResumesSorted.objectAt(0)
+      latest_text = latest_resume.get('resumeText')
+      job_regex = /^(.*)(\d{2}|[:\-–]|to)+ *([Pp]resent|Current)(.*)$/m
+      match = job_regex.exec(latest_text)
+      if match
+        if !match[1] && !match[3]
+          job_regex = /\n.*\n.*\n(.*)\d{4} +([:\-–]|to)(.*)$/m
+          match = job_regex.exec(latest_text)
+      else
+        job_regex = /^(.*)[ \/\-–]\d{4} +([:\-–]|to)(.*)$/m
+        match = job_regex.exec(latest_text)
+
+      if match
+        return match[0]
+
   resumeTextUrl: ( ->
     adapterfor = @store.adapterFor('application')
     host = document.location.host.replace(/\:4200/,':3000')

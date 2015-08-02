@@ -114,7 +114,6 @@ module API
             zip = permitted_params[:resume][:zip]
             loc = API::V1::Resumes.geocode(address, city, state, zip)
             resume_params['location'] = loc if loc
-            p "location is #{loc}"
             #other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
             #resume_params['other_resumes'] = other_resume_params
             resume.update(resume_params)
