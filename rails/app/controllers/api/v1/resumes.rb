@@ -97,6 +97,46 @@ module API
           other_resume.destroy
         end
 
+        desc "post a complete resume"
+
+        params do
+          requires :resume
+        end
+
+        post "", root: "resumes" do
+          primary_email = permitted_params[:resume][:primary_email]
+          errors = {}
+          if primary_email.nil?
+            errors[:primary_email] = ['Primary Email is blank, you must supply a Primary Email.']
+          end
+          unless errors.length == 0
+            error!(
+              {
+                errors: errors
+              },
+              422
+            )
+          end
+          resume = Resume.find_by(primary_email: primary_email)
+          if resume
+            error!({errors: {primary_email: ['This person already exists']}}, 422)
+          else
+            resume_params = permitted_params[:resume].to_hash.except('other_resumes')
+            address = permitted_params[:resume][:address1]
+            city = permitted_params[:resume][:city]
+            state = permitted_params[:resume][:state]
+            zip = permitted_params[:resume][:zip]
+            loc = API::V1::Resumes.geocode(address, city, state, zip)
+            resume_params['location'] = loc if loc
+            #other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
+            #resume_params['other_resumes'] = other_resume_params
+            resume = Resume.new(resume_params)
+            unless resume.save
+              return {errors: resume.errors.full_messages}
+            end
+          end
+        end
+
         desc "put a complete resume"
 
         params do

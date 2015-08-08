@@ -28,11 +28,11 @@ PeopleNew = Ember.Route.extend
   alertFail: (reason) ->
     flashMessages = Ember.get(this, 'flashMessages')
     flashMessages.clearMessages()
-    messages = ""
+    messages = "<h4>There was a problem</h4><ul>"
     reason.errors.forEach (item) ->
-      messages += item.details
+      messages += "<li>" + item.details + "</li>"
       return
-    console.log(messages)
-    flashMessages.danger("Error: the profile could not be saved: " + messages)
+    messages += "</ul>"
+    flashMessages.danger( messages.htmlSafe() )
 
 `export default PeopleNew`
