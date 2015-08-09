@@ -15,6 +15,11 @@ PeopleNew = Ember.Route.extend
       model.destroyRecord()
 
   actions:
+    reset: (person) ->
+      person.destroyRecord();
+      @store.createRecord('resume')
+      @refresh()
+
     create: ->
       @flashMessages = Ember.get(@, 'flashMessages')
       @currentModel.save().then( @alertSuccess, @alertFail.bind(@) )
@@ -28,11 +33,11 @@ PeopleNew = Ember.Route.extend
   alertFail: (reason) ->
     flashMessages = Ember.get(this, 'flashMessages')
     flashMessages.clearMessages()
-    messages = "<h4>There was a problem</h4><ul>"
-    reason.errors.forEach (item) ->
-      messages += "<li>" + item.details + "</li>"
-      return
-    messages += "</ul>"
+    messages = "<h4>There was a problem</h4><ul><li>"
+    messages += reason.errors.map( (item) ->
+      item.details
+    ).uniq().join('</li><li>')
+    messages += "</li></ul>"
     flashMessages.danger( messages.htmlSafe() )
 
 `export default PeopleNew`

@@ -1,37 +1,40 @@
-em-form model=model submit_button=false
+bs-form model=model formLayout="vertical"
   .row
     .col-md-3
-      form-field property="firstName" label="First Name"
+      bs-form-element controlType="text" property="firstName" label="First Name"
     .col-md-4
-      form-field property="lastName" label="Last Name"
+      bs-form-element controlType="text" property="lastName" label="Last Name"
     .col-md-5
-      form-field property="primaryEmail" label="Primary Email Address"
+      bs-form-element controlType="email" property="primaryEmail" label="Primary Email Address"
   .row
     .col-md-12
-      form-field property="address1" label="Address1"
-      form-field property="address2" label="Address2"
+      bs-form-element controlType="text" property="address1" label="Address1"
+      bs-form-element controlType="text" property="address2" label="Address2"
   .row
     .col-md-8
-      form-field property="city" label="City"
-    .col-md-1
-      form-field property="state" label="State"
+      bs-form-element controlType="text" property="city" label="City"
+    .col-md-2
+      bs-form-element controlType="text" property="state" label="State"
+    .col-md-2
+      bs-form-element controlType="text" property="zip" label="Zip"
+  .row
+    .col-md-6
+      bs-form-element controlType="text" property="homePhone" label="Home Phone"
+    .col-md-6
+      bs-form-element controlType="text" property="mobilePhone" label="Mobile Phone"
+  .row
+    .col-md-12
+      bs-form-element controlType="textarea" property="notes" label="Notes" rows=3
+  .row
     .col-md-3
-      form-field property="zip" label="Zip"
-  .row
-    .col-md-6
-      form-field property="homePhone" label="Home Phone"
-    .col-md-6
-      form-field property="mobilePhone" label="Mobile Phone"
-  .row
-    .col-md-12
-      em-text property="notes" label="Notes" rows=3
-  .row
-    .col-md-12
-      form-field property="file" type="file" label="Resume"
+      label Resume
+      file-upload-element name="resume_content" model=model
 
   .row
     .col-md-5
     .col-md-2
       bs-button class="btn btn-info btn-sm" action="submit" value=model
         =save_label
+      | &nbsp;&nbsp;
+      bs-button type="primary" class="btn-sm btn-info reset" action="reset" value=model |Reset
     .col-md-5
