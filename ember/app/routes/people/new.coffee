@@ -22,7 +22,7 @@ PeopleNew = Ember.Route.extend
 
     create: ->
       @flashMessages = Ember.get(@, 'flashMessages')
-      @currentModel.save().then( @alertSuccess, @alertFail.bind(@) )
+      @currentModel.save().then( @alertSuccess.bind(@), @alertFail.bind(@) )
 
   alertSuccess: (model) ->
     flashMessages = Ember.get(this, 'flashMessages')

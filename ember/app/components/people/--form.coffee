@@ -4,7 +4,9 @@ FormComponent = Ember.Component.extend
   hasValidator: true
   actions:
     submit: (person) ->
-      console.log('content' + @get('content'))
+      file = document.getElementById('file-field').files[0]
+      person.set('content', file)
+      person.set('filename', file.name)
       @sendAction('submit', person)
 
     reset: (person) ->

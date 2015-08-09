@@ -28,7 +28,7 @@ bs-form model=model formLayout="vertical"
   .row
     .col-md-3
       label Resume
-      file-upload-element name="resume_content" model=model
+      input type='file' id='file-field'
 
   .row
     .col-md-5

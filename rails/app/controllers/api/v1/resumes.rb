@@ -104,16 +104,18 @@ module API
         end
 
         post "", root: "resumes" do
-          primary_email = permitted_params[:resume][:primary_email]
-          first_name = permitted_params[:resume][:first_name]
-          last_name  = permitted_params[:resume][:last_name]
-          zip        = permitted_params[:resume][:zip]
-          address1   = permitted_params[:resume][:address1]
-          address2   = permitted_params[:resume][:address2]
+          filtered_params = permitted_params[:resume].select{ |k, v| v != 'null' }
+          primary_email = filtered_params['primary_email']
+          first_name = filtered_params['first_name']
+          last_name  = filtered_params['last_name']
+          zip        = filtered_params['zip']
+          address1   = filtered_params['address1']
+          address2   = filtered_params['address2']
           address    = address1.to_s + ' ' + address2.to_s
-          city       = permitted_params[:resume][:city]
-          state      = permitted_params[:resume][:state]
-          content    = permitted_params[:resume][:content]
+          p address
+          city       = filtered_params['city']
+          state      = filtered_params['state']
+          content    = filtered_params['content']
           errors = {}
           if primary_email.nil?
             errors[:primary_email] = ['Primary Email is blank, you must supply a Primary Email.']
@@ -158,7 +160,7 @@ module API
               422
             )
           end
-          resume_params = permitted_params[:resume].to_hash.except('other_resumes', 'content')
+          resume_params = filtered_params.to_hash.except('other_resumes', 'content')
           loc = API::V1::Resumes.geocode(address, city, state, zip)
           resume_params['location'] = loc if loc
           resume = Resume.new(resume_params)
