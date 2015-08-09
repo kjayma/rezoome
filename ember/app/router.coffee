@@ -10,7 +10,8 @@ Router.map ->
       @route 'index', path: '/', ->
         @route 'resume', path: '/:resume_id'
   @route 'jobs'
-  @route 'people'
+  @resource 'people', path: '/people', ->
+    @route 'new'
 
 `export default Router`
 

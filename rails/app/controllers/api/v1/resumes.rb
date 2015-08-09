@@ -97,6 +97,80 @@ module API
           other_resume.destroy
         end
 
+        desc "post a complete resume"
+
+        params do
+          requires :resume
+        end
+
+        post "", root: "resumes" do
+          filtered_params = permitted_params[:resume].select{ |k, v| v != 'null' }
+          primary_email = filtered_params['primary_email']
+          first_name = filtered_params['first_name']
+          last_name  = filtered_params['last_name']
+          zip        = filtered_params['zip']
+          address1   = filtered_params['address1']
+          address2   = filtered_params['address2']
+          address    = address1.to_s + ' ' + address2.to_s
+          p address
+          city       = filtered_params['city']
+          state      = filtered_params['state']
+          content    = filtered_params['content']
+          errors = {}
+          if primary_email.nil?
+            errors[:primary_email] = ['Primary Email is blank, you must supply a Primary Email.']
+          end
+          if first_name.nil?
+            errors[:first_name] = ['First Name is blank, you must supply a First Name.']
+          end
+          if last_name.nil?
+            errors[:last_name] = ['Last Name is blank, you must supply a Last Name.']
+          end
+          if zip.nil? && (address.nil? || city.nil? || state.nil?)
+            errors[:zip] = ['Zip is blank, you must supply either a Zip or Address/City/State.']
+          end
+          unless STATES.map{ |state| state[0] }.include? state
+            errors[:state] = ['State must be a valid two letter abbreviation']
+          end
+          unless errors.length == 0
+            error!(
+              {
+                errors: errors
+              },
+              422
+            )
+          end
+          resume = Resume.find_by(primary_email: primary_email)
+          if resume
+            error!({errors: {primary_email: ['This person already exists']}}, 422)
+          end
+          resume = Resume.where(
+            first_name: first_name.try(:capitalize),
+            last_name:  last_name.try(:capitalize),
+            zip:        zip
+          ) if first_name && last_name && zip
+          if resume.first
+            error!(
+              {
+                errors: {
+                  last_name: ['A person with the same name already exists in this zip'],
+                  first_name: ['A person with the same name already exists in this zip']
+                }
+              },
+              422
+            )
+          end
+          resume_params = filtered_params.to_hash.except('other_resumes', 'content')
+          loc = API::V1::Resumes.geocode(address, city, state, zip)
+          resume_params['location'] = loc if loc
+          resume = Resume.new(resume_params)
+          API::V1::Resumes.build_other_resume(resume, content)
+
+          unless resume.save
+            return {errors: resume.errors.full_messages}
+          end
+        end
+
         desc "put a complete resume"
 
         params do
@@ -223,6 +297,22 @@ module API
       def self.grid_file_id(file)
         grid_fs = Mongoid::GridFs
         grid_fs.put(file).id
+      end
+
+      def self.build_other_resume(resume, content)
+        p content
+        md5sum = Digest::MD5.hexdigest content.tempfile.to_s
+        resume_text = Yomu.new(content.tempfile).text
+        fake_file = content.tempfile
+        extension = $1 if content.filename.match(/\.(.*)/)
+        resume.other_resumes.new(
+          resume_text: resume_text,
+          doctype: extension,
+          filename: content.filename,
+          md5sum: md5sum,
+          last_update: Time.now,
+          resume_grid_fs_id: API::V1::Resumes.grid_file_id(fake_file)
+        )
       end
     end
 

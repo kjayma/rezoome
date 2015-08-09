@@ -4,20 +4,20 @@ h4.resume
   .col-md-6
     .row
       = model.filename
-    em-form form_layout="inline" model=model submit_button=false
+    bs-form formLayout="inline" model=model
       .row
-        = em-input property="firstName" placeholder="firstName"
-        = em-input property="lastName" placeholder="lastName"
-        = em-input property="primaryEmail" placeholder="Primary Email"
+        = bs-form-element controlType="text" property="firstName" placeholder="firstName"
+        = bs-form-element controlType="text" property="lastName" placeholder="lastName"
+        = bs-form-element controlType="text" property="primaryEmail" placeholder="Primary Email"
       .row
-        = em-input property="address1" placeholder="Address1"
-        = em-input property="address2" placeholder="Address2"
+        = bs-form-element controlType="text" property="address1" placeholder="Address1"
+        = bs-form-element controlType="text" property="address2" placeholder="Address2"
       .row
-        = em-input property="city" placeholder="City"
-        = em-input property="state" placeholder="State"
-        = em-input property="zip" placeholder="Zip"
+        = bs-form-element controlType="text" property="city" placeholder="City"
+        = bs-form-element controlType="text" property="state" placeholder="State"
+        = bs-form-element controlType="text" property="zip" placeholder="Zip"
       .row
-        = input disabled=isntValid type="submit" class="btn btn-info btn-sm" value="Update Profile"
+        = bs-button action="submit" class="btn btn-info btn-sm" value=model |Update Profile
     .row
       = model.fullName
       '&nbsp;has

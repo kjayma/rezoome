@@ -132,7 +132,7 @@ namespace :load do
     state_regex             = /(\w+)#{zip_regex}/
     delimiters              = /[\n,\*•♦ ]/
     city_regex              = /#{delimiters}* *([\w \-\']*)[, ] *#{state_regex}/
-    city_no_zip_regex       = /#{delimiters}* *([\w \-\']*), *(#{states.join('|')})/
+    city_no_zip_regex       = /#{delimiters}* *([\w \-\']*), *(#{STATES.join('|')})/
     address_no_zip_regex    = /#{delimiters}* *(\w* *\d+[\w\-\d ]*)#{city_no_zip_regex}/
 
     address_hash            = {}
@@ -177,7 +177,7 @@ namespace :load do
 
     if address_hash[:state]
       if address_hash[:state].length > 2
-        state = states.detect{ |st| st[1].upcase == address_hash[:state].upcase }
+        state = STATES.detect{ |st| st[1].upcase == address_hash[:state].upcase }
         address_hash[:state] = state[0] if state
       else
         address_hash[:state] = address_hash[:state].upcase
@@ -194,15 +194,15 @@ namespace :load do
 
   def fix_state(resume)
     state = resume.state
-    return if states.detect{ |abbr, name| abbr == state}
+    return if STATES.detect{ |abbr, name| abbr == state}
     if state.length == 2
-      if fixed_state = states.detect{ |abbr, name| abbr == state.upcase}
+      if fixed_state = STATES.detect{ |abbr, name| abbr == state.upcase}
         resume.state = resume.state.upcase
       else
         resume.state = nil
       end
     else
-      if fixed_state = states.detect{ |abbr, name| name.upcase == state.upcase}
+      if fixed_state = STATES.detect{ |abbr, name| name.upcase == state.upcase}
         resume.state = fixed_state[0]
       else
         resume.state = nil
@@ -211,63 +211,4 @@ namespace :load do
     resume.save
   end
 
-  def states
-    return Array[
-      ["AK", "Alaska"],
-      ["AL", "Alabama"],
-      ["AR", "Arkansas"],
-      ["AS", "American Samoa"],
-      ["AZ", "Arizona"],
-      ["CA", "California"],
-      ["CO", "Colorado"],
-      ["CT", "Connecticut"],
-      ["DC", "District of Columbia"],
-      ["DE", "Delaware"],
-      ["FL", "Florida"],
-      ["GA", "Georgia"],
-      ["GU", "Guam"],
-      ["HI", "Hawaii"],
-      ["IA", "Iowa"],
-      ["ID", "Idaho"],
-      ["IL", "Illinois"],
-      ["IN", "Indiana"],
-      ["KS", "Kansas"],
-      ["KY", "Kentucky"],
-      ["LA", "Louisiana"],
-      ["MA", "Massachusetts"],
-      ["MD", "Maryland"],
-      ["ME", "Maine"],
-      ["MI", "Michigan"],
-      ["MN", "Minnesota"],
-      ["MO", "Missouri"],
-      ["MS", "Mississippi"],
-      ["MT", "Montana"],
-      ["NC", "North Carolina"],
-      ["ND", "North Dakota"],
-      ["NE", "Nebraska"],
-      ["NH", "New Hampshire"],
-      ["NJ", "New Jersey"],
-      ["NM", "New Mexico"],
-      ["NV", "Nevada"],
-      ["NY", "New York"],
-      ["OH", "Ohio"],
-      ["OK", "Oklahoma"],
-      ["OR", "Oregon"],
-      ["PA", "Pennsylvania"],
-      ["PR", "Puerto Rico"],
-      ["RI", "Rhode Island"],
-      ["SC", "South Carolina"],
-      ["SD", "South Dakota"],
-      ["TN", "Tennessee"],
-      ["TX", "Texas"],
-      ["UT", "Utah"],
-      ["VA", "Virginia"],
-      ["VI", "Virgin Islands"],
-      ["VT", "Vermont"],
-      ["WA", "Washington"],
-      ["WI", "Wisconsin"],
-      ["WV", "West Virginia"],
-      ["WY", "Wyoming"]
-    ]
-  end
 end

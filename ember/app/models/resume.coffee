@@ -19,6 +19,7 @@ Resume = DS.Model.extend
   updated_at: DS.attr('date')
   distance: DS.attr('number')
   otherResumes: DS.hasMany('other_resumes')
+  content: DS.attr('file')
 
   fullName: ( ->
     @get('firstName') + ' ' + @get('lastName')

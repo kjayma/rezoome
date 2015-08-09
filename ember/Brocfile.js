@@ -15,6 +15,9 @@ var app = new EmberApp({
       'bower_components/bootstrap/less'
     ]
   },
+  'ember-bootstrap': {
+    'importBootstrapTheme': false
+  },
   name: require('./package.json').name,
   sourcemaps: {
     enabled: true,
