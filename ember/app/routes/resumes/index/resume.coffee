@@ -22,4 +22,7 @@ ResumesIndexResumeRoute = Ember.Route.extend
       console.log('in put')
       model.save()
 
+    destroyResume: (model) ->
+      model.destroyRecord()
+
 `export default ResumesIndexResumeRoute`
