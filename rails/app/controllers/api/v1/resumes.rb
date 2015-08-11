@@ -97,6 +97,18 @@ module API
           other_resume.destroy
         end
 
+        desc "delete a person"
+
+        params do
+          requires :id, type: String, desc: "ID of the resume"
+        end
+
+        delete ":id", root: "resumes" do
+          id = permitted_params[:id]
+          resume = Resume.find(id)
+          resume.destroy!
+        end
+
         desc "post a complete resume"
 
         params do

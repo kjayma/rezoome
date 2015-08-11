@@ -45,6 +45,7 @@ var app = new EmberApp({
 // Mocha support: JSHint tests are current QUnit and fail to run
 app.import('bower_components/moment/moment.js')
 app.import('bower_components/bootstrap/js/carousel.js')
+app.import('bower_components/bootstrap/js/modal.js')
 app.hinting = false;
 
 module.exports = app.toTree();

@@ -17,13 +17,18 @@ h4.resume
         = bs-form-element controlType="text" property="state" placeholder="State"
         = bs-form-element controlType="text" property="zip" placeholder="Zip"
       .row
-        = bs-button action="submit" class="btn btn-info btn-sm" value=model |Update Profile
+        .col-md-2
+          = bs-button action="submit" class="btn btn-info btn-sm" value=model |Update Profile
+        .col-md-1
+          bootstrap-modal title="Remove Person" ok="destroyResume" close="removeModal" model=model
+            | Are you sure you want to remove this person?
+
     .row
       = model.fullName
       '&nbsp;has
       = model.resumesOnFile
       |&nbsp; resumes on file
-  .col-md-2.col-md-offset-2
+  .col-md-2.col-md-offset-1
     br
     br
     br

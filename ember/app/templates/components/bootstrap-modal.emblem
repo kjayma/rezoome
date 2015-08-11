@@ -1,0 +1,17 @@
+.modal.fade tabindex="-1" role="dialog" aria-labelled-by="deletePersonLabel"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true"
+            |&times;
+        h4.modal-title
+          title
+      .modal-body
+        yield
+      .modal-footer
+        bs-button class="btn-danger" action="ok" value=model |Remove Person
+        bs-button class="btn-default" action="close" | Cancel
+unless isShowingConfirmation
+  bs-button class="btn-sm btn-danger" action="show" value=model
+    i.glyphicon.glyphicon-trash
