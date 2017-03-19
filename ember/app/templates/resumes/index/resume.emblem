@@ -17,7 +17,8 @@ h4.resume
         = bs-form-element controlType="text" property="state" placeholder="State"
         = bs-form-element controlType="text" property="zip" placeholder="Zip"
       .row
-        = bs-form-element controlType="text" property="notes" placeholder="Notes"
+        .notes
+          = bs-form-element controlType="textarea" property="notes" rows="2" placeholder="Notes" style="width: 640px;"
       .row
         .col-md-2
           = bs-button action="submit" class="btn btn-info btn-sm" value=model |Update Profile
