@@ -8,6 +8,7 @@ module API
       expose :filename
       expose :first_name
       expose :last_name
+      expose :position
       expose :address1
       expose :address2
       expose :city

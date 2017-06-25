@@ -6,6 +6,7 @@ class ResumeSerializer < ActiveModel::Serializer
     :filename,
     :first_name,
     :last_name,
+    :position,
     :last_update,
     :address1,
     :address2,
