@@ -14,6 +14,7 @@ Resume = DS.Model.extend
   homePhone: DS.attr('string')
   mobilePhone: DS.attr('string')
   doctype: DS.attr('string')
+  position: DS.attr('string')
   notes: DS.attr('string')
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
