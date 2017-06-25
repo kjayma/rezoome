@@ -28,11 +28,11 @@
                     = input value=radius id="radius" class="form-control input-sm" placeholder="Search Radius"
                     .input-group-addon.radius.input-sm miles
                   p class="help-block radius" Defaults to 200 miles
-                 label for="search_term" class="sr-only" Keywords :&nbsp;
-                 = textarea rows="3" value=search_term id="search_term" class="form-control input-sm" placeholder="Keywords, one per line"
                  .input-group.state
                    label for="state" class="sr-only" State:&nbsp;
                    = input value=state id="state" class="form-control input-sm" placeholder="State"
+                 label for="search_term" class="sr-only" Keywords :&nbsp;
+                 = textarea rows="3" value=search_term id="search_term" class="form-control input-sm" placeholder="Keywords, one per line"
              .row.name_and_position
                .col-md-12
                  .input-group.primary_email
