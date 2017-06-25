@@ -30,6 +30,11 @@
                   p class="help-block radius" Defaults to 200 miles
                  label for="search_term" class="sr-only" Keywords :&nbsp;
                  = textarea rows="3" value=search_term id="search_term" class="form-control input-sm" placeholder="Keywords, one per line"
+                 .input-group.state
+                   label for="state" class="sr-only" State:&nbsp;
+                   = input value=state id="state" class="form-control input-sm" placeholder="State"
+             .row
+               .col-md-12
                  .input-group.primary_email
                    label for="primary_email" class="sr-only" Email:&nbsp;
                    = input value=primary_email id="primary_email" class="form-control input-sm" placeholder="Email"
@@ -39,9 +44,7 @@
                  .input-group.first_name
                    label for="first_name" class="sr-only" First Name:&nbsp;
                    = input value=first_name id="first_name" class="form-control input-sm" placeholder="First Name"
-                 .input-group.state
-                   label for="state" class="sr-only" State:&nbsp;
-                   = input value=state id="state" class="form-control input-sm" placeholder="State"
+
              .row
                .col-md-12.third_row
                  = link-to "resumes.index.index" (query-params state=state primary_email=primary_email last_name = last_name first_name = first_name location = location radius = radius search_term = search_term) class="btn btn-primary btn-sm" id="search" | Search Now
