@@ -10,7 +10,8 @@ h4.resume
         = bs-form-element controlType="text" property="lastName" placeholder="lastName"
         = bs-form-element controlType="text" property="primaryEmail" placeholder="Primary Email"
       .row
-        = bs-form-element controlType="text" property="position" placeholder="Position" style="width: 640px;"
+        //= bs-form-element controlType="text" property="position" placeholder="Position" style="width: 640px;"
+        = select-list content=positionArray optionValuePath='id' optionLablePath='description' value=position
       .row
         = bs-form-element controlType="text" property="address1" placeholder="Address1"
         = bs-form-element controlType="text" property="address2" placeholder="Address2"
