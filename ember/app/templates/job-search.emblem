@@ -33,7 +33,7 @@
                  .input-group.state
                    label for="state" class="sr-only" State:&nbsp;
                    = input value=state id="state" class="form-control input-sm" placeholder="State"
-             .row
+             .row.name_and_position
                .col-md-12
                  .input-group.primary_email
                    label for="primary_email" class="sr-only" Email:&nbsp;
