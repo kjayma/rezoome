@@ -20,6 +20,7 @@ class Resume
   field :home_phone, type: String
   field :mobile_phone, type: String
   field :doctype, type: String
+  field :position, type: String
   field :notes, type: String
 
   field :resume_grid_fs_id, type: String

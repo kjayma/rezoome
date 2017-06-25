@@ -124,10 +124,10 @@ module API
           address1   = filtered_params['address1']
           address2   = filtered_params['address2']
           address    = address1.to_s + ' ' + address2.to_s
-          p address
           city       = filtered_params['city']
           state      = filtered_params['state']
           content    = filtered_params['content']
+          position   = filtered_params['position']
           errors = {}
           if primary_email.nil?
             errors[:primary_email] = ['Primary Email is blank, you must supply a Primary Email.']
@@ -198,6 +198,7 @@ module API
             city = permitted_params[:resume][:city]
             state = permitted_params[:resume][:state]
             zip = permitted_params[:resume][:zip]
+            position = permitted_params[:resume][:position]
             loc = API::V1::Resumes.geocode(address, city, state, zip)
             resume_params['location'] = loc if loc
             #other_resume_params = resume_params['other_resumes'].map { |other_resume| other_resume.except('resume_id') }
@@ -229,7 +230,8 @@ module API
           optional :primary_email, type: String, desc: "primary email used by candidate"
           optional :last_name, type: String, desc: "last name of candidate"
           optional :first_name, type: String, desc: "first name of candidate"
-          optional :state, type: String, desc: "last name of candidate"
+          optional :state, type: String, desc: "state"
+          optional :position, type: String, desc: "position"
         end
 
         get "", root: "resume" do
@@ -312,7 +314,6 @@ module API
       end
 
       def self.build_other_resume(resume, content)
-        p content
         md5sum = Digest::MD5.hexdigest content.tempfile.to_s
         resume_text = Yomu.new(content.tempfile).text
         fake_file = content.tempfile
