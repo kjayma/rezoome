@@ -1,6 +1,9 @@
 `import Ember from 'ember'`
+`import config from '../../../config/environment'`
 
 ResumesIndexResumeController = Ember.Controller.extend
+  positionArray: config.APP.positionArray
+
   # needs resume index for search terms
   needs: ['resumes/index']
   upload_button: "Upload New Resume"
