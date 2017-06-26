@@ -1,5 +1,5 @@
 `import Ember from 'ember'`
-`import config from '../../../config/environment'`
+`import config from '../config/environment'`
 
 JobSearchController = Ember.Controller.extend
   positionArray: config.APP.positionArray
