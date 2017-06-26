@@ -1,6 +1,9 @@
 `import Ember from 'ember'`
+`import config from '../../../config/environment'`
 
 JobSearchController = Ember.Controller.extend
+  positionArray: config.APP.positionArray
+
   needs: ['resumes/index']
 
   actions:

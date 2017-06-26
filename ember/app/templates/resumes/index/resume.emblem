@@ -10,12 +10,10 @@ h4.resume
         = bs-form-element controlType="text" property="lastName" placeholder="lastName"
         = bs-form-element controlType="text" property="primaryEmail" placeholder="Primary Email"
       .row
-        //= bs-form-element controlType="text" property="position" placeholder="Position" style="width: 640px;"
-        //= select-list content=positionArray optionValuePath='id' optionLabelPath='description' value=position prompt="Please select a position" action=(action (mut position))
         select onChange={ action (mut position) value="target.value" }
           option value='' Select a position
           each positionChoice in positionArray
-            option value={positionChoice.id} selected={eq-to positionChoice.id position} 
+            option value={positionChoice.id} selected={eq-to positionChoice.id position}
               = positionChoice.description
       .row
         = bs-form-element controlType="text" property="address1" placeholder="Address1"

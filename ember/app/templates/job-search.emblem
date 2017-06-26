@@ -46,7 +46,11 @@
                    = input value=first_name id="first_name" class="form-control input-sm" placeholder="First Name"
                  .input-group.position
                    label for="position" class="sr-only" Position:&nbsp;
-                   = input value=position id="position" class="form-control input-sm" placeholder="Position"
+                   select id="position" onChange={ action (mut position) value="target.value" }
+                     option hidde="hidden" Select a position
+                     each positionChoice in positionArray
+                       option value={positionChoice.id} selected={eq-to positionChoice.id position}
+                         = positionChoice.description
 
              .row
                .col-md-12.third_row
