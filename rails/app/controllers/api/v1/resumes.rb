@@ -250,7 +250,11 @@ module API
               value != ""
               value != 'null'
               !value.empty?
-                conditions[key] = value
+                if key.to_s == 'position'
+                  conditions[key] = {'$in' => value.split(',')}
+                else
+                  conditions[key] = value
+                end
             end
           end
 
