@@ -33,16 +33,44 @@ module.exports = function(environment) {
       // when it is created
       positionArray: [
         {
-          id: 'account_manager',
+          id: 'am',
           description: 'Account Manager'
         },
         {
-          id: 'clinical_manager',
+          id: 'ceo',
+          description: 'CEO'
+        },
+        {
+          id: 'cm',
           description: 'Clinical Manager'
         },
         {
-          id: 'recruiter',
-          description: 'Recruiter'
+          id: 'cs',
+          description: 'Clinical Specialist'
+        },
+        {
+          id: 'n',
+          description: 'Nurse'
+        },
+        {
+          id: 'rsm',
+          description: 'Regional Sales Manager'
+        },
+        {
+          id: 'pm',
+          description: 'Product Manager'
+        },
+        {
+          id: 'sm',
+          description: 'Sales Manager'
+        },
+        {
+          id: 'sr',
+          description: 'Sales Representative'
+        },
+        {
+          id: 'vp',
+          description: 'Vice President'
         }
       ]
     }
