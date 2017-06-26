@@ -7,6 +7,13 @@ bs-form model=model formLayout="vertical"
     .col-md-5
       bs-form-element controlType="email" property="primaryEmail" label="Primary Email Address"
   .row
+    select onChange={ action (mut model.position) value="target.value" }
+      option value='' Select a position
+      each positionChoice in positionArray
+        option value={positionChoice.id} selected={eq-to positionChoice.id model.position}
+          = positionChoice.description
+
+  .row
     .col-md-12
       bs-form-element controlType="text" property="address1" label="Address1"
       bs-form-element controlType="text" property="address2" label="Address2"
