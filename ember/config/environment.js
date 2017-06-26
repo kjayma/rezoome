@@ -39,6 +39,10 @@ module.exports = function(environment) {
         {
           id: 'clinical_manager',
           description: 'Clinical Manager'
+        },
+        {
+          id: 'recruiter',
+          description: 'Recruiter'
         }
       ]
     }
