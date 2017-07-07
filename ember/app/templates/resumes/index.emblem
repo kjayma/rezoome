@@ -22,7 +22,9 @@
                     ' &nbsp;-
                     = distance-in-miles resume.distance
                     | &nbsp; miles
-                  ' &nbsp;)
+                  ' &nbsp; - 
+                  = formatted-date resume.updated_at 'MM/DD/YYYY'
+                  ')
           .col-md-6
             = google-map lat=model.searchLocation.lat lng=model.searchLocation.lng zoom=zoom markerInfoWindowTemplateName='map/info-window' markers=model.resumes markerViewClass='map/marker' markerControllerClass='map/marker'
 
@@ -45,6 +47,8 @@
                   ' &nbsp;-
                   = distance-in-miles resume.distance
                   | &nbsp; miles
-                ' &nbsp;)
+                ' &nbsp; - 
+                = formatted-date resume.updated_at 'MM/DD/YYYY'
+                ')
 
       outlet

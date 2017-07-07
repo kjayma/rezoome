@@ -247,8 +247,8 @@ module API
               key.to_s != 'location' &&
               key.to_s != 'radius' &&
               value != 'undefined' &&
-              value != ""
-              value != 'null'
+              value != "" &&
+              value != 'null' &&
               !value.empty?
                 if key.to_s == 'position'
                   conditions[key] = {'$in' => value.split(',')}
